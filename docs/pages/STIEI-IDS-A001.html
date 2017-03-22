@@ -1,0 +1,376 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>STIEI-IDS-A001[标准操作规范-批量数据导入].md</title><style type='text/css'>html, body {overflow-x: initial !important;}.mermaid .label { color: rgb(51, 51, 51); }
+.node rect, .node circle, .node ellipse, .node polygon { fill: rgb(236, 236, 255); stroke: rgb(204, 204, 255); stroke-width: 1px; }
+.edgePath .path { stroke: rgb(51, 51, 51); }
+.edgeLabel { background-color: rgb(232, 232, 232); }
+.cluster rect { fill: rgb(255, 255, 222) !important; rx: 4 !important; stroke: rgb(170, 170, 51) !important; stroke-width: 1px !important; }
+.cluster text { fill: rgb(51, 51, 51); }
+.actor { stroke: rgb(204, 204, 255); fill: rgb(236, 236, 255); }
+text.actor { fill: black; stroke: none; }
+.actor-line { stroke: grey; }
+.messageLine0 { stroke-width: 1.5; stroke: rgb(51, 51, 51); }
+.messageLine1 { stroke-width: 1.5; stroke: rgb(51, 51, 51); }
+#arrowhead { fill: rgb(51, 51, 51); }
+#crosshead path { fill: rgb(51, 51, 51) !important; stroke: rgb(51, 51, 51) !important; }
+.messageText { fill: rgb(51, 51, 51); stroke: none; }
+.labelBox { stroke: rgb(204, 204, 255); fill: rgb(236, 236, 255); }
+.labelText { fill: black; stroke: none; }
+.loopText { fill: black; stroke: none; }
+.loopLine { stroke-width: 2; stroke: rgb(204, 204, 255); }
+.note { stroke: rgb(170, 170, 51); fill: rgb(255, 245, 173); }
+.noteText { fill: black; stroke: none; font-family: "trebuchet ms", verdana, arial; font-size: 14px; }
+.section { stroke: none; opacity: 0.2; }
+.section0 { fill: rgba(102, 102, 255, 0.490196); }
+.section2 { fill: rgb(255, 244, 0); }
+.section1, .section3 { fill: white; opacity: 0.2; }
+.sectionTitle0 { fill: rgb(51, 51, 51); }
+.sectionTitle1 { fill: rgb(51, 51, 51); }
+.sectionTitle2 { fill: rgb(51, 51, 51); }
+.sectionTitle3 { fill: rgb(51, 51, 51); }
+.sectionTitle { text-anchor: start; font-size: 11px; }
+.grid .tick { stroke: lightgrey; opacity: 0.3; shape-rendering: crispEdges; }
+.grid path { stroke-width: 0; }
+.today { fill: none; stroke: red; stroke-width: 2px; }
+.task { stroke-width: 2; }
+.taskText { text-anchor: middle; font-size: 11px; }
+.taskTextOutsideRight { fill: black; text-anchor: start; font-size: 11px; }
+.taskTextOutsideLeft { fill: black; text-anchor: end; font-size: 11px; }
+.taskText0, .taskText1, .taskText2, .taskText3 { fill: white; }
+.task0, .task1, .task2, .task3 { fill: rgb(138, 144, 221); stroke: rgb(83, 79, 188); }
+.taskTextOutside0, .taskTextOutside2 { fill: black; }
+.taskTextOutside1, .taskTextOutside3 { fill: black; }
+.active0, .active1, .active2, .active3 { fill: rgb(191, 199, 255); stroke: rgb(83, 79, 188); }
+.activeText0, .activeText1, .activeText2, .activeText3 { fill: black !important; }
+.done0, .done1, .done2, .done3 { stroke: grey; fill: lightgrey; stroke-width: 2; }
+.doneText0, .doneText1, .doneText2, .doneText3 { fill: black !important; }
+.crit0, .crit1, .crit2, .crit3 { stroke: rgb(255, 136, 136); fill: red; stroke-width: 2; }
+.activeCrit0, .activeCrit1, .activeCrit2, .activeCrit3 { stroke: rgb(255, 136, 136); fill: rgb(191, 199, 255); stroke-width: 2; }
+.doneCrit0, .doneCrit1, .doneCrit2, .doneCrit3 { stroke: rgb(255, 136, 136); fill: lightgrey; stroke-width: 2; cursor: pointer; shape-rendering: crispEdges; }
+.doneCritText0, .doneCritText1, .doneCritText2, .doneCritText3 { fill: black !important; }
+.activeCritText0, .activeCritText1, .activeCritText2, .activeCritText3 { fill: black !important; }
+.titleText { text-anchor: middle; font-size: 18px; fill: black; }
+.node text { font-family: "trebuchet ms", verdana, arial; font-size: 14px; }
+div.mermaidTooltip { position: absolute; text-align: center; max-width: 200px; padding: 2px; font-family: "trebuchet ms", verdana, arial; font-size: 12px; background: rgb(255, 255, 222); border: 1px solid rgb(170, 170, 51); border-radius: 2px; pointer-events: none; z-index: 100; }
+#write .md-diagram-panel .md-diagram-panel-preview div { width: initial; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror-scroll { overflow-y: hidden; overflow-x: auto; }
+.CodeMirror-lines { padding: 4px 0px; }
+.CodeMirror pre { }
+.CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler { background-color: white; }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background-color: rgb(247, 247, 247); white-space: nowrap; }
+.CodeMirror-linenumbers { }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.CodeMirror div.CodeMirror-cursor { border-left: 1px solid black; z-index: 3; }
+.CodeMirror div.CodeMirror-secondarycursor { border-left: 1px solid silver; }
+.CodeMirror.cm-keymap-fat-cursor div.CodeMirror-cursor { width: auto; border: 0px; background: rgb(119, 238, 119); z-index: 1; }
+.CodeMirror div.CodeMirror-cursor.CodeMirror-overwrite { }
+.cm-tab { display: inline-block; }
+.cm-s-typora-default .cm-header, .cm-s-typora-default .cm-property { color: rgb(217, 79, 138); }
+.cm-s-typora-default pre.cm-header1:not(.cm-atom) :not(.cm-overlay) { font-size: 2rem; line-height: 2rem; }
+.cm-s-typora-default pre.cm-header2:not(.cm-atom) :not(.cm-overlay) { font-size: 1.4rem; line-height: 1.4rem; }
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number { color: rgb(149, 132, 134); }
+.cm-s-typora-default .cm-table-row, .cm-s-typora-default .cm-block-start { font-family: monospace; }
+.cm-s-typora-default .cm-comment, .cm-s-typora-default .cm-code { color: rgb(74, 90, 159); font-family: monospace; }
+.cm-s-typora-default .cm-tag { color: rgb(169, 68, 66); }
+.cm-s-typora-default .cm-string { color: rgb(126, 134, 169); }
+.cm-s-typora-default .cm-link { color: rgb(196, 122, 15); text-decoration: underline; }
+.cm-s-typora-default .cm-variable-2, .cm-s-typora-default .cm-variable-1 { color: inherit; }
+.cm-s-typora-default .cm-overlay { font-size: 1rem; font-family: monospace; }
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor { border-left: 3px solid rgb(228, 98, 154); }
+.cm-s-typora-default .CodeMirror-activeline-background { left: -60px; right: -30px; background: rgba(204, 204, 204, 0.2); }
+.cm-s-typora-default .CodeMirror-gutters { border-right: none; background-color: inherit; }
+.cm-s-typora-default .cm-trailing-space-new-line::after, .cm-startspace::after, .cm-starttab .cm-tab::after { content: "•"; position: absolute; left: 0px; opacity: 0; font-family: LetterGothicStd, monospace; }
+.os-windows .cm-startspace::after, .os-windows .cm-starttab .cm-tab::after { left: -0.1em; }
+.cm-starttab .cm-tab::after { content: " "; }
+.cm-startspace, .cm-tab, .cm-starttab, .cm-trailing-space-a, .cm-trailing-space-b, .cm-trailing-space-new-line { font-family: monospace; position: relative; }
+.cm-s-typora-default .cm-trailing-space-new-line::after { content: "↓"; opacity: 0.3; }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: black; }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-property { color: black; }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: blue; }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: bold; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: rgb(255, 0, 0); }
+.cm-invalidchar { color: rgb(255, 0, 0); }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { margin-bottom: -30px; margin-right: -30px; padding-bottom: 30px; padding-right: 30px; height: 100%; outline: none; position: relative; box-sizing: content-box; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-vscrollbar, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler { position: absolute; z-index: 6; display: none; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow-x: hidden; overflow-y: scroll; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow-y: hidden; overflow-x: scroll; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 30px; z-index: 3; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: transparent; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; word-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { word-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-widget { }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.CodeMirror-selected { background: rgb(217, 217, 217); }
+.CodeMirror-focused .CodeMirror-selected { background: rgb(215, 212, 240); }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+.CodeMirror span { }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+.CodeMirror-lint-markers { width: 16px; }
+.CodeMirror-lint-tooltip { background-color: infobackground; border: 1px solid black; border-radius: 4px; color: infotext; font-family: monospace; overflow: hidden; padding: 2px 5px; position: fixed; white-space: pre-wrap; z-index: 10000; max-width: 600px; opacity: 0; transition: opacity 0.4s; font-size: 0.8em; }
+.CodeMirror-lint-mark-error, .CodeMirror-lint-mark-warning { background-position: left bottom; background-repeat: repeat-x; }
+.CodeMirror-lint-mark-error { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAYAAAC09K7GAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9sJDw4cOCW1/KIAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAAHElEQVQI12NggIL/DAz/GdA5/xkY/qPKMDAwAADLZwf5rvm+LQAAAABJRU5ErkJggg=="); }
+.CodeMirror-lint-marker-error, .CodeMirror-lint-marker-warning { background-position: center center; background-repeat: no-repeat; cursor: pointer; display: inline-block; height: 16px; width: 16px; vertical-align: middle; position: relative; }
+.CodeMirror-lint-message-error, .CodeMirror-lint-message-warning { padding-left: 18px; background-position: left top; background-repeat: no-repeat; }
+.CodeMirror-lint-marker-error, .CodeMirror-lint-message-error { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAHlBMVEW7AAC7AACxAAC7AAC7AAAAAAC4AAC5AAD///+7AAAUdclpAAAABnRSTlMXnORSiwCK0ZKSAAAATUlEQVR42mWPOQ7AQAgDuQLx/z8csYRmPRIFIwRGnosRrpamvkKi0FTIiMASR3hhKW+hAN6/tIWhu9PDWiTGNEkTtIOucA5Oyr9ckPgAWm0GPBog6v4AAAAASUVORK5CYII="); }
+.CodeMirror-lint-marker-warning, .CodeMirror-lint-message-warning { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAANlBMVEX/uwDvrwD/uwD/uwD/uwD/uwD/uwD/uwD/uwD6twD/uwAAAADurwD2tQD7uAD+ugAAAAD/uwDhmeTRAAAADHRSTlMJ8mN1EYcbmiixgACm7WbuAAAAVklEQVR42n3PUQqAIBBFUU1LLc3u/jdbOJoW1P08DA9Gba8+YWJ6gNJoNYIBzAA2chBth5kLmG9YUoG0NHAUwFXwO9LuBQL1giCQb8gC9Oro2vp5rncCIY8L8uEx5ZkAAAAASUVORK5CYII="); }
+.CodeMirror-lint-marker-multiple { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAMAAADzjKfhAAAACVBMVEUAAAAAAAC/v7914kyHAAAAAXRSTlMAQObYZgAAACNJREFUeNo1ioEJAAAIwmz/H90iFFSGJgFMe3gaLZ0od+9/AQZ0ADosbYraAAAAAElFTkSuQmCC"); background-repeat: no-repeat; background-position: right bottom; width: 100%; height: 100%; }
+
+
+html { font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(51, 51, 51); }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { background: rgb(181, 214, 252); text-shadow: none; }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; padding-bottom: 70px; white-space: pre-wrap; overflow-x: auto; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+.typora-export #write { margin: 0px auto; }
+#write > p:first-child, #write > ul:first-child, #write > ol:first-child, #write > pre:first-child, #write > blockquote:first-child, #write > div:first-child, #write > table:first-child { margin-top: 30px; }
+#write li > table:first-child { margin-top: -20px; }
+img { max-width: 100%; vertical-align: middle; }
+input, button, select, textarea { color: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+::before, ::after, * { box-sizing: border-box; }
+#write p, #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write div, #write pre { width: inherit; }
+#write p, #write h1, #write h2, #write h3, #write h4, #write h5, #write h6 { position: relative; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+p { -webkit-margin-before: 1rem; -webkit-margin-after: 1rem; -webkit-margin-start: 0px; -webkit-margin-end: 0px; }
+.mathjax-block { margin-top: 0px; margin-bottom: 0px; -webkit-margin-before: 0rem; -webkit-margin-after: 0rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: bold; font-style: italic; }
+a { cursor: pointer; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; margin: 4px 0px 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 80px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+pre { white-space: pre-wrap; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+.md-fences .CodeMirror.CodeMirror-wrap { top: -1.6em; margin-bottom: -1.6em; }
+.md-fences.mock-cm { white-space: pre-wrap; }
+.show-fences-line-number .md-fences { padding-left: 0px; }
+.show-fences-line-number .md-fences.mock-cm { padding-left: 40px; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; padding-top: 1em; padding-bottom: 1em; }
+.footnotes + .footnotes { margin-top: -1em; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: transparent; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: normal; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li p, li .mathjax-block { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; }
+@media print {
+  html, body { height: 100%; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  h1, h2, h3, h4, h5, h6 { break-after: avoid-page; orphans: 2; }
+  p { orphans: 4; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 1cm; padding-right: 1cm; }
+  .typora-export #write::after { height: 0px; }
+  @page { margin: 20mm 0mm; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 2.86rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p .md-image:only-child { display: inline-block; width: 100%; text-align: center; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.mathjax-block { white-space: pre; overflow: hidden; width: 100%; }
+p + .mathjax-block { margin-top: -1.143rem; }
+.mathjax-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus { outline: none; box-shadow: none; }
+.task-list { list-style-type: none; }
+.task-list-item { position: relative; padding-left: 1em; }
+.task-list-item input { position: absolute; top: 0px; left: 0px; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc::after, .md-toc-content::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); text-decoration: none; }
+.md-toc-inner:hover { }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: bold; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+.md-tag { opacity: 0.5; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: monospace; }
+code { text-align: left; }
+h1 .md-tag, h2 .md-tag, h3 .md-tag, h4 .md-tag, h5 .md-tag, h6 .md-tag { font-weight: initial; opacity: 0.35; }
+a.md-print-anchor { border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: none !important; background: transparent !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.mathjax-block .MathJax_SVG_Display { text-align: center; margin: 1em 0em; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: monospace; }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: normal; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none; }
+
+
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: normal; src: local("Open Sans Regular"), url("./github/400.woff") format("woff"); }
+@font-face { font-family: "Open Sans"; font-style: italic; font-weight: normal; src: local("Open Sans Italic"), url("./github/400i.woff") format("woff"); }
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: bold; src: local("Open Sans Bold"), url("./github/700.woff") format("woff"); }
+@font-face { font-family: "Open Sans"; font-style: italic; font-weight: bold; src: local("Open Sans Bold Italic"), url("./github/700i.woff") format("woff"); }
+html { font-size: 16px; }
+body { font-family: "Open Sans", "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; color: rgb(51, 51, 51); line-height: 1.6; }
+#write { max-width: 860px; margin: 0px auto; padding: 20px 30px 100px; }
+#write > ul:first-child, #write > ol:first-child { margin-top: 30px; }
+body > :first-child { margin-top: 0px !important; }
+body > :last-child { margin-bottom: 0px !important; }
+a { color: rgb(65, 131, 196); }
+h1, h2, h3, h4, h5, h6 { position: relative; margin-top: 1rem; margin-bottom: 1rem; font-weight: bold; line-height: 1.4; cursor: text; }
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor { text-decoration: none; }
+h1 tt, h1 code { font-size: inherit; }
+h2 tt, h2 code { font-size: inherit; }
+h3 tt, h3 code { font-size: inherit; }
+h4 tt, h4 code { font-size: inherit; }
+h5 tt, h5 code { font-size: inherit; }
+h6 tt, h6 code { font-size: inherit; }
+h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom: 1px solid rgb(238, 238, 238); }
+h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom: 1px solid rgb(238, 238, 238); }
+h3 { font-size: 1.5em; line-height: 1.43; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1em; }
+h6 { font-size: 1em; color: rgb(119, 119, 119); }
+p, blockquote, ul, ol, dl, table { margin: 0.8em 0px; }
+li > ol, li > ul { margin: 0px; }
+hr { height: 4px; padding: 0px; margin: 16px 0px; background-color: rgb(231, 231, 231); border-width: 0px 0px 1px; border-style: none none solid; border-top-color: initial; border-right-color: initial; border-left-color: initial; border-image: initial; overflow: hidden; box-sizing: content-box; border-bottom-color: rgb(221, 221, 221); }
+body > h2:first-child { margin-top: 0px; padding-top: 0px; }
+body > h1:first-child { margin-top: 0px; padding-top: 0px; }
+body > h1:first-child + h2 { margin-top: 0px; padding-top: 0px; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child { margin-top: 0px; padding-top: 0px; }
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 { margin-top: 0px; padding-top: 0px; }
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p { margin-top: 0px; }
+li p.first { display: inline-block; }
+ul, ol { padding-left: 30px; }
+ul:first-child, ol:first-child { margin-top: 0px; }
+ul:last-child, ol:last-child { margin-bottom: 0px; }
+blockquote { border-left: 4px solid rgb(221, 221, 221); padding: 0px 15px; color: rgb(119, 119, 119); }
+blockquote blockquote { padding-right: 0px; }
+table { padding: 0px; word-break: initial; }
+table tr { border-top: 1px solid rgb(204, 204, 204); background-color: white; margin: 0px; padding: 0px; }
+table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+table tr th { font-weight: bold; border: 1px solid rgb(204, 204, 204); text-align: left; margin: 0px; padding: 6px 13px; }
+table tr td { border: 1px solid rgb(204, 204, 204); text-align: left; margin: 0px; padding: 6px 13px; }
+table tr th:first-child, table tr td:first-child { margin-top: 0px; }
+table tr th:last-child, table tr td:last-child { margin-bottom: 0px; }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); }
+.md-fences, code, tt { border: 1px solid rgb(221, 221, 221); background-color: rgb(248, 248, 248); border-radius: 3px; font-family: Consolas, "Liberation Mono", Courier, monospace; padding: 2px 4px 0px; font-size: 0.9em; }
+.md-fences { margin-bottom: 15px; margin-top: 15px; padding: 8px 1em 6px; }
+.task-list { padding-left: 0px; }
+.task-list-item { padding-left: 32px; }
+.task-list-item input { top: 3px; left: 8px; }
+@media screen and (min-width: 914px) {
+}
+@media print {
+  html { font-size: 13px; }
+  table, pre { break-inside: avoid; }
+  pre { word-wrap: break-word; }
+}
+.md-fences { background-color: rgb(248, 248, 248); }
+#write pre.md-meta-block { padding: 1rem; font-size: 85%; line-height: 1.45; background-color: rgb(247, 247, 247); border: 0px; border-radius: 3px; color: rgb(119, 119, 119); margin-top: 0px !important; }
+.mathjax-block > .code-tooltip { bottom: 0.375rem; }
+#write > h3.md-focus::before { left: -1.5625rem; top: 0.375rem; }
+#write > h4.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+#write > h5.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+#write > h6.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+.md-image > .md-meta { border: 1px solid rgb(221, 221, 221); border-radius: 3px; font-family: Consolas, "Liberation Mono", Courier, monospace; padding: 2px 4px 0px; font-size: 0.9em; color: inherit; }
+.md-tag { color: inherit; }
+.md-toc { margin-top: 20px; padding-bottom: 20px; }
+#typora-quick-open { border: 1px solid rgb(221, 221, 221); background-color: rgb(248, 248, 248); }
+#typora-quick-open-item { background-color: rgb(250, 250, 250); border-color: rgb(254, 254, 254) rgb(229, 229, 229) rgb(229, 229, 229) rgb(238, 238, 238); border-style: solid; border-width: 1px; }
+#md-notification::before { top: 10px; }
+.on-focus-mode blockquote { border-left-color: rgba(85, 85, 85, 0.117647); }
+header, .context-menu, .megamenu-content, footer { font-family: "Segoe UI", Arial, sans-serif; }
+
+
+
+
+
+
+</style>
+</head>
+<body class='typora-export' >
+<div  id='write'  class = 'is-node'><p></p><h1><a name='header-c8' class='md-header-anchor '></a>批量数据导入操作设计规范</h1><table><thead><tr><th>文档编号</th><th>STIEI-IDS-A001  [Information-DesignSpecification-Action-001]</th></tr></thead><tbody><tr><td>名称</td><td>信息化项目通用操作设计规范：批量数据导入</td></tr><tr><td>版本</td><td>A.01.20170224</td></tr><tr><td>发布日期</td><td>2017年2月24日</td></tr><tr><td>编写人</td><td><strong>上海电子信息职业技术学院 </strong>与<strong>上海电子工业学校 </strong>信息化建设小组</td></tr></tbody></table><p></p><p>文档审批：</p><table><thead><tr><th>版本</th><th>审批人</th><th>备注</th><th>签字</th><th>审批日期</th></tr></thead><tbody><tr><td>A.01.20170224</td><td></td><td></td><td></td><td></td></tr></tbody></table><p></p><p>文档修订：</p><table><thead><tr><th>版本</th><th>作者</th><th>内容</th><th>历史</th><th>修改日期</th></tr></thead><tbody><tr><td>A.01.20170224</td><td>徐御</td><td></td><td>首次发布</td><td>2017.02.24.0520</td></tr></tbody></table><h2><a name='header-c59' class='md-header-anchor '></a>目录</h2><div class='md-toc' mdtype='toc'><p class="md-toc-content"><span class="md-toc-item md-toc-h1" data-ref="c8"><a class="md-toc-inner" href="#header-c8">批量数据导入操作设计规范</a></span><span class="md-toc-item md-toc-h2" data-ref="c59"><a class="md-toc-inner" href="#header-c59">目录</a></span><span class="md-toc-item md-toc-h2" data-ref="c61"><a class="md-toc-inner" href="#header-c61">概要</a></span><span class="md-toc-item md-toc-h3" data-ref="c62"><a class="md-toc-inner" href="#header-c62">文档简介</a></span><span class="md-toc-item md-toc-h3" data-ref="c67"><a class="md-toc-inner" href="#header-c67">任务介绍</a></span><span class="md-toc-item md-toc-h2" data-ref="c72"><a class="md-toc-inner" href="#header-c72">正文</a></span><span class="md-toc-item md-toc-h3" data-ref="c73"><a class="md-toc-inner" href="#header-c73">术语与缩写</a></span><span class="md-toc-item md-toc-h3" data-ref="c84"><a class="md-toc-inner" href="#header-c84">角色与行为列表</a></span><span class="md-toc-item md-toc-h3" data-ref="c101"><a class="md-toc-inner" href="#header-c101">角色与行为详细说明</a></span><span class="md-toc-item md-toc-h4" data-ref="c102"><a class="md-toc-inner" href="#header-c102">1. 导入模板</a></span><span class="md-toc-item md-toc-h3" data-ref="c153"><a class="md-toc-inner" href="#header-c153">模型格式说明</a></span><span class="md-toc-item md-toc-h3" data-ref="c168"><a class="md-toc-inner" href="#header-c168">交互模型</a></span><span class="md-toc-item md-toc-h4" data-ref="c169"><a class="md-toc-inner" href="#header-c169">方式1 <strong>多次检验，单次导入</strong></a></span><span class="md-toc-item md-toc-h5" data-ref="c173"><a class="md-toc-inner" href="#header-c173">A01:权限请求</a></span><span class="md-toc-item md-toc-h5" data-ref="c176"><a class="md-toc-inner" href="#header-c176">A02:系统检查权限</a></span><span class="md-toc-item md-toc-h5" data-ref="c179"><a class="md-toc-inner" href="#header-c179">A03:提供原始模板的下载方式</a></span><span class="md-toc-item md-toc-h5" data-ref="c182"><a class="md-toc-inner" href="#header-c182">A04:依照模板填写数据</a></span><span class="md-toc-item md-toc-h5" data-ref="c185"><a class="md-toc-inner" href="#header-c185">A05:提交填写好的内容</a></span><span class="md-toc-item md-toc-h5" data-ref="c188"><a class="md-toc-inner" href="#header-c188">A06:检验提交的数据</a></span><span class="md-toc-item md-toc-h5" data-ref="c231"><a class="md-toc-inner" href="#header-c231">A07:提示全部数据已验证</a></span><span class="md-toc-item md-toc-h5" data-ref="c234"><a class="md-toc-inner" href="#header-c234">A08:追加新数据</a></span><span class="md-toc-item md-toc-h5" data-ref="c237"><a class="md-toc-inner" href="#header-c237">A09:提示错误信息</a></span><span class="md-toc-item md-toc-h5" data-ref="c240"><a class="md-toc-inner" href="#header-c240">A10:用户是否愿意继续</a></span><span class="md-toc-item md-toc-h5" data-ref="c248"><a class="md-toc-inner" href="#header-c248">A11:提供错误集合的下载方式</a></span><span class="md-toc-item md-toc-h5" data-ref="c251"><a class="md-toc-inner" href="#header-c251">A12:依照模板提示 修改数据</a></span><span class="md-toc-item md-toc-h5" data-ref="c254"><a class="md-toc-inner" href="#header-c254">A13:提交修改好的内容</a></span><span class="md-toc-item md-toc-h5" data-ref="c257"><a class="md-toc-inner" href="#header-c257">A14:请求汇总验证信息</a></span><span class="md-toc-item md-toc-h5" data-ref="c273"><a class="md-toc-inner" href="#header-c273">A15:提交验证信息</a></span><span class="md-toc-item md-toc-h5" data-ref="c276"><a class="md-toc-inner" href="#header-c276">A16:清点数据，并完成导入</a></span><span class="md-toc-item md-toc-h5" data-ref="c284"><a class="md-toc-inner" href="#header-c284">A17:提示导入结果</a></span><span class="md-toc-item md-toc-h4" data-ref="c294"><a class="md-toc-inner" href="#header-c294">方式2 <strong>检验合格，即时导入</strong></a></span><span class="md-toc-item md-toc-h5" data-ref="c298"><a class="md-toc-inner" href="#header-c298">B01:权限请求</a></span><span class="md-toc-item md-toc-h5" data-ref="c300"><a class="md-toc-inner" href="#header-c300">B02:系统检查权限</a></span><span class="md-toc-item md-toc-h5" data-ref="c303"><a class="md-toc-inner" href="#header-c303">B03:提供原始模板的下载方式</a></span><span class="md-toc-item md-toc-h5" data-ref="c306"><a class="md-toc-inner" href="#header-c306">B04:依照模板 填写数据</a></span><span class="md-toc-item md-toc-h5" data-ref="c309"><a class="md-toc-inner" href="#header-c309">B05:提交填写好的内容</a></span><span class="md-toc-item md-toc-h5" data-ref="c312"><a class="md-toc-inner" href="#header-c312">B06:检验提交的数据</a></span><span class="md-toc-item md-toc-h5" data-ref="c315"><a class="md-toc-inner" href="#header-c315">B07:提示全部数据已验证</a></span><span class="md-toc-item md-toc-h5" data-ref="c318"><a class="md-toc-inner" href="#header-c318">B08:追加新数据</a></span><span class="md-toc-item md-toc-h5" data-ref="c321"><a class="md-toc-inner" href="#header-c321">B09:提示错误信息</a></span><span class="md-toc-item md-toc-h5" data-ref="c324"><a class="md-toc-inner" href="#header-c324">B10:用户是否愿意继续</a></span><span class="md-toc-item md-toc-h5" data-ref="c327"><a class="md-toc-inner" href="#header-c327">B11:提供错误集合的下载方式</a></span><span class="md-toc-item md-toc-h5" data-ref="c330"><a class="md-toc-inner" href="#header-c330">B12:依照模板提示 修改数据</a></span><span class="md-toc-item md-toc-h5" data-ref="c333"><a class="md-toc-inner" href="#header-c333">B13:提交修改好的内容</a></span><span class="md-toc-item md-toc-h5" data-ref="c336"><a class="md-toc-inner" href="#header-c336">B14:清点数据，并完成导入</a></span><span class="md-toc-item md-toc-h5" data-ref="c339"><a class="md-toc-inner" href="#header-c339">B15:提示导入结果</a></span></p></div><h2><a name='header-c61' class='md-header-anchor '></a>概要</h2><h3><a name='header-c62' class='md-header-anchor '></a>文档简介</h3><p>​	此此文档用于定义上海电子信息学院与上海电子工业学校信息化项目建设中，关于应用系统“批量导入外部数据”这个操作的通用规约以及软件规范。</p><p></p><h3><a name='header-c67' class='md-header-anchor '></a>任务介绍</h3><p>​	所谓的“批量导入外部数据”操作任务是指当<code>应用系统</code>需要<code>用户</code>导入一批数据时，用户可以根据<code>应用系统</code>提供的<strong>模板</strong>，在系统提供的<strong>用户界面</strong>上多次操作，最终完成一次完成数据导入任务。</p><p> 	本设计规范的目的是指导 <code>应用系统</code>在遇到该类任务时，应该向<code>用户</code>提供何种统一的用户体验。原则上，导入操作模拟自动存款机(CDM)的运行模式。<code>应用系统</code>接收<code>用户</code>首次上传的数据时进行<strong>所有数据</strong>有效性检查，<strong>暂存</strong>有效数据后再过滤出无效数据给<code>用户</code>，<code>用户</code>再次修改这批无效数据后提交给<code>应用系统</code>，<code>应用系统</code>也再次<strong>暂存</strong>有效数据后再过滤出无效数据。如此反复，直到<code>用户</code> 将当次操作中所有需要导入的数据（不一定是全部）修改合格后，系统最终一次性批量导入数据。</p><h2><a name='header-c72' class='md-header-anchor '></a>正文</h2><h3><a name='header-c73' class='md-header-anchor '></a>术语与缩写</h3><table><thead><tr><th>术语或者缩写名称</th><th>术语或者缩写说明</th></tr></thead><tbody><tr><td>Excel</td><td>微软Office软件中的表格编辑软件</td></tr><tr><td>CDM</td><td>自动存款机</td></tr></tbody></table><h3><a name='header-c84' class='md-header-anchor '></a>角色与行为列表</h3><table><thead><tr><th>角色或者行为</th><th>定义</th></tr></thead><tbody><tr><td>应用系统</td><td>指服务商为学院开发的应用系统</td></tr><tr><td>用户</td><td>正在操作应用系统的人员</td></tr><tr><td>数据缓冲</td><td>某次导入操作过程中，对用户提交数据的服务器端缓存</td></tr><tr><td>导入模板</td><td>详见本文档的“角色与行为详细说明 1”</td></tr></tbody></table><h3><a name='header-c101' class='md-header-anchor '></a>角色与行为详细说明</h3><h4><a name='header-c102' class='md-header-anchor '></a>1. 导入模板</h4><p>​	<strong>导入模板</strong>是由<code>应用系统</code> 向 <code>用户</code> 提供的一个Excel格式表格文件，内容为当前导入操作所需要的实际数据与配置信息格式要求。<code>用户</code>应按这个格式要求将要导入的数据填写到表格文件里，再通过某种方式提交给<code>应用系统</code>用以完成向系统导入数据的操作 。本规范只对该表格做最低限度的约束，该部分约束是为完成基本的导入操作提供数据支持。所有要实现“批量导入外部数据”操作的应用系统都必须以此约束作为基础，根据具体导入动作要求拓展表格数据。</p><p>​	<strong>导入模板</strong>表格的最低格式要求：</p><table><thead><tr><th>序号</th><th>.....【具体数据】....</th><th>是否覆盖</th><th>说明</th></tr></thead><tbody><tr><td>#</td><td>范例数据</td><td>是/否(空)</td><td>格式说明</td></tr><tr><td>......</td><td>...........</td><td>...........</td><td>......</td></tr><tr><td>1-N</td><td>............</td><td>是/否(空)</td><td>......</td></tr></tbody></table><p>​	单列说明：</p><ul><li><p>序号：  由<code>用户</code>或者<code>应用系统</code>填写。一般情况下是从1开始的递增编号，内容可用来识别数据行号；但如果该单元格内容以符号&quot;#&quot;开头，则表示该行数据为注释行，<code>应用系统</code>在导入数据时应自动忽略该行数据。</p></li><li><p>具体数据： 由<code>用户</code>填写，各具体“批量导入外部数据”操作实例所需要的实际数据，可根据具体导入要求拓展成1至N列。</p></li><li><p>是否覆盖：由<code>用户</code>填写，用来表示在数据导入时，该行数据是否强制覆盖<code>应用系统</code>原有数据。</p><blockquote><p>设计规范：</p><p>只当单元格填写为&quot;是&quot;时，表示<code>用户</code>确认需要用该行数据强制覆盖原有数据；否则其它情况下，<code>应用系统</code>应认为不可以强制覆盖。</p></blockquote></li><li><p>说明：由<code>应用系统</code>输出，用来向用户表明在该行数据导入时发生的具体信息。该单元格一般用来输出具体的错误信息，有时也可根据具体情况输出其它信息。</p><blockquote><p>设计规范 ：</p><p>​	推荐在导出错误信息时，“说明”单元格以红色文字为标识；其它普通信息以蓝色或绿色标识。</p></blockquote></li></ul><h3><a name='header-c153' class='md-header-anchor '></a>模型格式说明</h3><div class="md-diagram-panel" mdtype="math_block"><svg id="mermaidChart0" width="470" xmlns="http://www.w3.org/2000/svg" height="759" viewBox="-10 -8 470 759" style="height: 799px;"><g></g><g><line id="actor0" x1="75" y1="5" x2="75" y2="762" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="0" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="75" y="37.5" class="actor" style="text-anchor: middle;">角色1</text></g><g><line id="actor1" x1="275" y1="5" x2="275" y2="762" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="200" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="275" y="37.5" class="actor" style="text-anchor: middle;">角色2</text></g><defs><marker id="arrowhead" refX="5" refY="2" markerWidth="6" markerHeight="4" orient="auto"><path d="M 0,0 V 4 L6,2 Z"></path></marker></defs><defs><marker id="crosshead" markerWidth="15" markerHeight="8" orient="auto" refX="16" refY="4"><path fill="black" stroke="#000000" stroke-width="1px" d="M 9,2 V 6 L16,4 Z" style="stroke-dasharray: 0, 0;"></path><path fill="none" stroke="#000000" stroke-width="1px" d="M 0,1 L 6,7 M 6,1 L 0,7" style="stroke-dasharray: 0, 0;"></path></marker></defs><g><text x="175" y="93" class="messageText" style="text-anchor: middle;">1. 行为</text><line x1="75" y1="100" x2="275" y2="100" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><rect x="50" y="120" fill="#EDF2AE" stroke="#666" width="250" height="36" rx="0" ry="0" class="note"></rect><text x="66" y="149" fill="black" class="noteText"><tspan x="66">2.判断</tspan></text></g><g><text x="175" y="184" class="messageText" style="text-anchor: middle;"></text><line x1="75" y1="191" x2="275" y2="191" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><rect x="270" y="193" fill="#f4f4f4" stroke="#666" width="10" height="89" rx="0" ry="0"></rect></g><g><rect x="300" y="211" fill="#EDF2AE" stroke="#666" width="150" height="36" rx="0" ry="0" class="note"></rect><text x="316" y="240" fill="black" class="noteText"><tspan x="316">3.线下操作</tspan></text></g><g><text x="172.5" y="275" class="messageText" style="text-anchor: middle;"></text><line x1="270" y1="282" x2="75" y2="282" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="175" y="355" class="messageText" style="text-anchor: middle;"></text><line x1="75" y1="362" x2="275" y2="362" class="messageLine1" stroke-width="2" stroke="black" style="stroke-dasharray: 3, 3; fill: none;"></line></g><g><line x1="55" y1="302" x2="295" y2="302" stroke-width="2" stroke="#526e52" class="loopLine"></line><line x1="295" y1="302" x2="295" y2="382" stroke-width="2" stroke="#526e52" class="loopLine"></line><line x1="55" y1="382" x2="295" y2="382" stroke-width="2" stroke="#526e52" class="loopLine"></line><line x1="55" y1="302" x2="55" y2="382" stroke-width="2" stroke="#526e52" class="loopLine"></line><rect x="55" y="302" fill="#526e52" stroke="none" width="50" height="20" rx="0" ry="0" class="labelBox"></rect><text x="62.5" y="317" fill="white" class="labelText"><tspan x="62.5">loop</tspan></text><text x="175" y="332" fill="black" class="loopText" style="text-anchor: middle;"><tspan x="175">[ 循环 ]</tspan></text></g><g><text x="175" y="455" class="messageText" style="text-anchor: middle;">判断为“是”时，执行的操作</text><line x1="275" y1="462" x2="75" y2="462" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="175" y="530" class="messageText" style="text-anchor: middle;">判断为“否”时，执行的操作</text><line x1="275" y1="537" x2="75" y2="537" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><line x1="55" y1="402" x2="295" y2="402" stroke-width="2" stroke="#526e52" class="loopLine"></line><line x1="295" y1="402" x2="295" y2="557" stroke-width="2" stroke="#526e52" class="loopLine"></line><line x1="55" y1="557" x2="295" y2="557" stroke-width="2" stroke="#526e52" class="loopLine"></line><line x1="55" y1="402" x2="55" y2="557" stroke-width="2" stroke="#526e52" class="loopLine"></line><line x1="55" y1="482" x2="295" y2="482" stroke-width="2" stroke="#526e52" class="loopLine"></line><rect x="55" y="402" fill="#526e52" stroke="none" width="50" height="20" rx="0" ry="0" class="labelBox"></rect><text x="62.5" y="417" fill="white" class="labelText"><tspan x="62.5">alt</tspan></text><text x="175" y="432" fill="black" class="loopText" style="text-anchor: middle;"><tspan x="175">[ 分支判断：是？ ]</tspan></text><text x="175" y="512" fill="black" class="loopText" style="text-anchor: middle;"><tspan x="175">[ 分支判断：否？ ]</tspan></text></g><g><text x="175" y="630" class="messageText" style="text-anchor: middle;">可选操作</text><line x1="75" y1="637" x2="275" y2="637" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><line x1="55" y1="577" x2="295" y2="577" stroke-width="2" stroke="#526e52" class="loopLine"></line><line x1="295" y1="577" x2="295" y2="657" stroke-width="2" stroke="#526e52" class="loopLine"></line><line x1="55" y1="657" x2="295" y2="657" stroke-width="2" stroke="#526e52" class="loopLine"></line><line x1="55" y1="577" x2="55" y2="657" stroke-width="2" stroke="#526e52" class="loopLine"></line><rect x="55" y="577" fill="#526e52" stroke="none" width="50" height="20" rx="0" ry="0" class="labelBox"></rect><text x="62.5" y="592" fill="white" class="labelText"><tspan x="62.5">opt</tspan></text><text x="175" y="607" fill="black" class="loopText" style="text-anchor: middle;"><tspan x="175">[ 可选操作 ]</tspan></text></g><g><rect x="0" y="697" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="75" y="734.5" class="actor" style="text-anchor: middle;">角色1</text></g><g><rect x="200" y="697" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="275" y="734.5" class="actor" style="text-anchor: middle;">角色2</text></g></svg></div><p><strong>说明:</strong></p><ol start='' ><li>行为： 两个角色之间的交互操作，行为由箭头的起点作用于箭头指向的角色。</li><li>判断：对上一个行为进行判断，如果条件满足则继续；否则操作结束。</li><li>线下操作： 角色所代表的<code>用户</code>在现在执行某个长时间的任务。</li></ol><h3><a name='header-c168' class='md-header-anchor '></a>交互模型</h3><h4><a name='header-c169' class='md-header-anchor '></a>方式1 <strong>多次检验，单次导入</strong></h4><p>​	在最终导入前可多次提交与检验，但导入动作只在最后一次提交时进行。</p><div class="md-diagram-panel" mdtype="math_block"><svg id="mermaidChart1" width="610" xmlns="http://www.w3.org/2000/svg" height="1454" viewBox="-150 -8 610 1454" style="height: 1494px;"><g></g><g><line id="actor2" x1="75" y1="5" x2="75" y2="1457" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="0" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="75" y="37.5" class="actor" style="text-anchor: middle;">用户</text></g><g><line id="actor3" x1="275" y1="5" x2="275" y2="1457" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="200" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="275" y="37.5" class="actor" style="text-anchor: middle;">应用系统</text></g><defs><marker id="arrowhead" refX="5" refY="2" markerWidth="6" markerHeight="4" orient="auto"><path d="M 0,0 V 4 L6,2 Z"></path></marker></defs><defs><marker id="crosshead" markerWidth="15" markerHeight="8" orient="auto" refX="16" refY="4"><path fill="black" stroke="#000000" stroke-width="1px" d="M 9,2 V 6 L16,4 Z" style="stroke-dasharray: 0, 0;"></path><path fill="none" stroke="#000000" stroke-width="1px" d="M 0,1 L 6,7 M 6,1 L 0,7" style="stroke-dasharray: 0, 0;"></path></marker></defs><g><text x="175" y="93" class="messageText" style="text-anchor: middle;">A01-权限请求</text><line x1="75" y1="100" x2="275" y2="100" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><rect x="50" y="120" fill="#EDF2AE" stroke="#666" width="250" height="58" rx="0" ry="0" class="note"></rect><text x="66" y="149" fill="black" class="noteText"><tspan x="66">A02-系统检查权限</tspan><tspan dy="22" x="66">如果失败则流程结束</tspan></text></g><g><text x="175" y="206" class="messageText" style="text-anchor: middle;">A03-提供原始模板的下载方式</text><line x1="275" y1="213" x2="75" y2="213" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><rect x="70" y="215" fill="#f4f4f4" stroke="#666" width="10" height="111" rx="0" ry="0"></rect></g><g><rect x="-100" y="233" fill="#EDF2AE" stroke="#666" width="150" height="58" rx="0" ry="0" class="note"></rect><text x="-84" y="262" fill="black" class="noteText"><tspan x="-84">A04-依照模板</tspan><tspan dy="22" x="-84">填写数据</tspan></text></g><g><text x="177.5" y="319" class="messageText" style="text-anchor: middle;">A05-提交填写好的内容</text><line x1="80" y1="326" x2="275" y2="326" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><rect x="200" y="391" fill="#EDF2AE" stroke="#666" width="150" height="80" rx="0" ry="0" class="note"></rect><text x="216" y="420" fill="black" class="noteText"><tspan x="216">A06-检验提交的数据</tspan><tspan dy="22" x="216">缓存有效数据</tspan><tspan dy="22" x="216">带提示输出错误数据</tspan></text></g><g><text x="175" y="544" class="messageText" style="text-anchor: middle;">A07-提示全部数据已验证</text><line x1="275" y1="551" x2="75" y2="551" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="175" y="624" class="messageText" style="text-anchor: middle;">A08-追加新数据</text><line x1="75" y1="631" x2="275" y2="631" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><line x1="55" y1="571" x2="295" y2="571" stroke-width="2" stroke="#526e52" class="loopLine"></line><line x1="295" y1="571" x2="295" y2="651" stroke-width="2" stroke="#526e52" class="loopLine"></line><line x1="55" y1="651" x2="295" y2="651" stroke-width="2" stroke="#526e52" class="loopLine"></line><line x1="55" y1="571" x2="55" y2="651" stroke-width="2" stroke="#526e52" class="loopLine"></line><rect x="55" y="571" fill="#526e52" stroke="none" width="50" height="20" rx="0" ry="0" class="labelBox"></rect><text x="62.5" y="586" fill="white" class="labelText"><tspan x="62.5">opt</tspan></text><text x="175" y="601" fill="black" class="loopText" style="text-anchor: middle;"><tspan x="175">[ 如有新数据需要导入 ]</tspan></text></g><g><text x="175" y="719" class="messageText" style="text-anchor: middle;">A09-提示错误信息</text><line x1="275" y1="726" x2="75" y2="726" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><rect x="50" y="746" fill="#EDF2AE" stroke="#666" width="250" height="36" rx="0" ry="0" class="note"></rect><text x="66" y="775" fill="black" class="noteText"><tspan x="66">A10-用户是否愿意继续？</tspan></text></g><g><text x="175" y="810" class="messageText" style="text-anchor: middle;">A11-提供错误集合的下载方式</text><line x1="275" y1="817" x2="75" y2="817" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><rect x="70" y="819" fill="#f4f4f4" stroke="#666" width="10" height="111" rx="0" ry="0"></rect></g><g><rect x="-100" y="837" fill="#EDF2AE" stroke="#666" width="150" height="58" rx="0" ry="0" class="note"></rect><text x="-84" y="866" fill="black" class="noteText"><tspan x="-84">A12-依照模板提示</tspan><tspan dy="22" x="-84">修改数据</tspan></text></g><g><text x="177.5" y="923" class="messageText" style="text-anchor: middle;">A13-提交修改好的内容</text><line x1="80" y1="930" x2="275" y2="930" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><line x1="-120" y1="491" x2="320" y2="491" stroke-width="2" stroke="#526e52" class="loopLine"></line><line x1="320" y1="491" x2="320" y2="950" stroke-width="2" stroke="#526e52" class="loopLine"></line><line x1="-120" y1="950" x2="320" y2="950" stroke-width="2" stroke="#526e52" class="loopLine"></line><line x1="-120" y1="491" x2="-120" y2="950" stroke-width="2" stroke="#526e52" class="loopLine"></line><line x1="-120" y1="671" x2="320" y2="671" stroke-width="2" stroke="#526e52" class="loopLine"></line><rect x="-120" y="491" fill="#526e52" stroke="none" width="50" height="20" rx="0" ry="0" class="labelBox"></rect><text x="-112.5" y="506" fill="white" class="labelText"><tspan x="-112.5">alt</tspan></text><text x="100" y="521" fill="black" class="loopText" style="text-anchor: middle;"><tspan x="100">[ 如果所有数据已缓存 ]</tspan></text><text x="100" y="701" fill="black" class="loopText" style="text-anchor: middle;"><tspan x="100">[ 如果存在错误数据 ]</tspan></text></g><g><line x1="-140" y1="346" x2="370" y2="346" stroke-width="2" stroke="#526e52" class="loopLine"></line><line x1="370" y1="346" x2="370" y2="970" stroke-width="2" stroke="#526e52" class="loopLine"></line><line x1="-140" y1="970" x2="370" y2="970" stroke-width="2" stroke="#526e52" class="loopLine"></line><line x1="-140" y1="346" x2="-140" y2="970" stroke-width="2" stroke="#526e52" class="loopLine"></line><rect x="-140" y="346" fill="#526e52" stroke="none" width="50" height="20" rx="0" ry="0" class="labelBox"></rect><text x="-132.5" y="361" fill="white" class="labelText"><tspan x="-132.5">loop</tspan></text><text x="115" y="376" fill="black" class="loopText" style="text-anchor: middle;"><tspan x="115">[ 是否存在需要校验的数据 ]</tspan></text></g><g><rect x="300" y="990" fill="#EDF2AE" stroke="#666" width="150" height="58" rx="0" ry="0" class="note"></rect><text x="316" y="1019" fill="black" class="noteText"><tspan x="316">需要用户验</tspan><tspan dy="22" x="316">证导入的数据</tspan></text></g><g><text x="175" y="1121" class="messageText" style="text-anchor: middle;">A14-请求汇总验证信息</text><line x1="275" y1="1128" x2="75" y2="1128" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="175" y="1156" class="messageText" style="text-anchor: middle;">A15-提交验证信息</text><line x1="75" y1="1163" x2="275" y2="1163" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><line x1="55" y1="1068" x2="295" y2="1068" stroke-width="2" stroke="#526e52" class="loopLine"></line><line x1="295" y1="1068" x2="295" y2="1183" stroke-width="2" stroke="#526e52" class="loopLine"></line><line x1="55" y1="1183" x2="295" y2="1183" stroke-width="2" stroke="#526e52" class="loopLine"></line><line x1="55" y1="1068" x2="55" y2="1183" stroke-width="2" stroke="#526e52" class="loopLine"></line><rect x="55" y="1068" fill="#526e52" stroke="none" width="50" height="20" rx="0" ry="0" class="labelBox"></rect><text x="62.5" y="1083" fill="white" class="labelText"><tspan x="62.5">loop</tspan></text><text x="175" y="1098" fill="black" class="loopText" style="text-anchor: middle;"><tspan x="175">[ 验证未通过且用户未放弃 ]</tspan></text></g><g><rect x="50" y="1203" fill="#EDF2AE" stroke="#666" width="250" height="36" rx="0" ry="0" class="note"></rect><text x="66" y="1232" fill="black" class="noteText"><tspan x="66">验证是否通过？</tspan></text></g><g><rect x="200" y="1259" fill="#EDF2AE" stroke="#666" width="150" height="58" rx="0" ry="0" class="note"></rect><text x="216" y="1288" fill="black" class="noteText"><tspan x="216">A16-清点数</tspan><tspan dy="22" x="216">据，并完成导入</tspan></text></g><g><text x="175" y="1345" class="messageText" style="text-anchor: middle;">A17-提示导入结果</text><line x1="275" y1="1352" x2="75" y2="1352" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><rect x="0" y="1392" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="75" y="1429.5" class="actor" style="text-anchor: middle;">用户</text></g><g><rect x="200" y="1392" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="275" y="1429.5" class="actor" style="text-anchor: middle;">应用系统</text></g></svg></div><h5><a name='header-c173' class='md-header-anchor '></a>A01:权限请求</h5><p>​	<code>用户</code> 向 <code>应用系统</code> 申请某次数据导入的操作权限。</p><h5><a name='header-c176' class='md-header-anchor '></a>A02:系统检查权限</h5><p>​	<code>应用系统</code> 检查 <code>用户</code> 提交的权限申请是否合理。如果<code>用户</code>拥有该次操作的权限，则流程继续；否则流程结束。</p><h5><a name='header-c179' class='md-header-anchor '></a>A03:提供原始模板的下载方式</h5><p>​	<code>应用系统</code> 应向 <code>用户</code> 提供符合本文档“角色与行为详细说明 1.导入模板”要求的数据模板的具体获取方式：一般为下载地址；也可以为邮件发送或者带密码访问的下载等。</p><h5><a name='header-c182' class='md-header-anchor '></a>A04:依照模板填写数据</h5><p>​	<code>用户</code> 按照<em>导入模板</em>提示的方法，按要求填写要导入的数据到模板文档里。</p><h5><a name='header-c185' class='md-header-anchor '></a>A05:提交填写好的内容</h5><p>​	<code>用户</code> 通过在线平台提交在<strong>A04操作</strong>里填写好的数据文件。</p><h5><a name='header-c188' class='md-header-anchor '></a>A06:检验提交的数据</h5><p>​	<code>应用系统</code> 根据自己的业务规则依次校验每条用户提交的数据，处理依据如下：</p><blockquote><p>设计规范：</p><p>​	<code>应用系统</code>应为每次导入操作分配一个唯一的Session ID并和<code>用户</code>ID绑定。同时，系统应建立一个与该SessionID有关的<code>数据缓冲</code>用来缓存每次的操作，直到该次导入行为的结束（无论正常结束与否）。该设计的目的是为了防止当发生<code>用户</code>意外离线时，可以在下次登录时恢复最后一次的操作，避免不必要的数据损失。</p><p>​	<code>应用系统</code> 在设计上应把数据分为 &#39;未验证&#39;、&#39;验证合格&#39;、&#39;验证失败&#39;、&#39;已导入&#39; 四种状态。当<code>用户</code> 新导入数据时，每条数据应被标为&#39;未验证&#39;。系统使用业务逻辑逐条验证数据时应按以下逻辑再次分类数据：</p><ol start='' ><li><p>数据项的&#39;序号&#39;列以&#39;#&#39;字符开头，则该行数据项为注释数据，自动忽略该行数据并把该数据项从整体缓冲里删除。</p></li><li><p>导入数据项逻辑合格并且不与现有系统数据重复，数据项归为&#39;验证合格&#39;。</p></li><li><p>导入数据项逻辑合格但与现有系统数据重复时：</p><ul><li>如果数据项的&#39;是否覆盖&#39;列为&#39;是&#39;时，数据项归为&#39;验证合格&#39;。</li><li>如果数据项的&#39;是否覆盖&#39;列为空，则数据项归为&#39;验证失败&#39;，并把&#39;备注&#39;列标记为&#39;数据重复&#39;。</li></ul></li><li><p>导入数据项逻辑有错误时，数据项归为&#39;验证失败&#39;，并在&#39;备注&#39;列标记错误理由。</p><p><code>应用系统</code> 应在任何时刻都允许 <code>用户</code> 单独下载 整体的 <code>数据缓冲</code> 。</p><p>只要当次导入操作未完全结束并且不再验证操作中，<code>应用系统</code>应允许<code>用户</code>对现有的缓冲数据做如下操作：</p></li><li><p>&#39;未验证&#39;数据： 删除、修改、新增。</p></li><li><p>&#39;验证合格&#39;数据： 删除、修改。 在任何修改后，该数据项将自动被重新归为&#39;未验证&#39;状态。</p></li><li><p>&#39;验证失败&#39;数据： 删除、修改。 在任何修改后，该数据项将自动被重新归为&#39;未验证&#39;状态。</p></li></ol></blockquote><h5><a name='header-c231' class='md-header-anchor '></a>A07:提示全部数据已验证</h5><p>​	<code>应用系统</code>向<code>用户</code>提示所有数据都验证合格，<code>用户</code>在此步操作后，应该可以正式提交全部数据。</p><h5><a name='header-c234' class='md-header-anchor '></a>A08:追加新数据</h5><p>​	<code>用户</code> 通过在线平台提交按<strong>A04操作</strong>里填写好的新数据文件。</p><h5><a name='header-c237' class='md-header-anchor '></a>A09:提示错误信息</h5><p>​	由于当前的数据缓冲里存在&#39;验证失败&#39;的数据项，需要向<code>用户</code>提示具体哪些数据出错和错误理由。</p><h5><a name='header-c240' class='md-header-anchor '></a>A10:用户是否愿意继续</h5><p>​	<code>应用系统</code>在界面上强制提示或者预留按钮，允许用户放弃当前对剩余&#39;验证失败&#39;数据项的继续修改。</p><blockquote><p>实际规范：</p><p>​	当<code>应用系统</code>在本次操作中存在&#39;验证合格&#39;类型的数据项时，每当在进入下一次轮训前，应在操作界面上允许<code>用户</code>主动放弃当前再次修改剩余未合格数据的操作，允许只导入当前已合格的数据项并放弃为所有未合格的数据。</p></blockquote><h5><a name='header-c248' class='md-header-anchor '></a>A11:提供错误集合的下载方式</h5><p>​	<code>应用系统</code>提供给<code>用户</code>带有错误提示信息的本次导入操作里所有&#39;验证失败&#39;数据项的集合文件（导入模板格式）。</p><h5><a name='header-c251' class='md-header-anchor '></a>A12:依照模板提示 修改数据</h5><p>​	<code>用户</code> 按<strong>A11操作</strong>里提供文件的错误提示，修改导入数据到模板文档里。</p><h5><a name='header-c254' class='md-header-anchor '></a>A13:提交修改好的内容</h5><p>​	<code>用户</code> 通过在线平台提交在<strong>A12操作</strong>里填写好的数据文件。</p><h5><a name='header-c257' class='md-header-anchor '></a>A14:请求汇总验证信息</h5><p>​	<code>应用系统</code>向<code>用户</code>请求一个对现有所有需要导入数据的验证信息，可以是如下几种方式之一，或者也可以自行定义：</p><ul><li>要求手动输入所有需要到导入数据的总数量</li><li>要求手动输入所有需要到导入数据的总价</li><li>要求再次输入一遍用户密码</li><li>要求手动输入一个图形验证码</li></ul><h5><a name='header-c273' class='md-header-anchor '></a>A15:提交验证信息</h5><p>​	<code>用户</code>根据<strong>A14操作</strong>的要求输入验证数据。</p><h5><a name='header-c276' class='md-header-anchor '></a>A16:清点数据，并完成导入</h5><p>​	<code>应用系统</code>应在后台再次校验所有<code>数据缓冲</code>里&#39;验证合格&#39;的数据项的合法性，并在保证并发安全的前提下导入数据到系统中。</p><blockquote><p>设计规范：</p><p>​	<code>应用系统</code>在导入进行时在数据库层面或者应用层面保证并发安全，避免同样的数据重复导入。</p></blockquote><h5><a name='header-c284' class='md-header-anchor '></a>A17:提示导入结果</h5><p>​	<code>应用系统</code>向<code>用户</code>提示导入的最终结果，并允许<code>用户</code>下载一份<strong>导入报告</strong>。</p><blockquote><p>设计规范：</p><p>​	生成的<strong>导入报告</strong>功能必须实现。</p></blockquote><p></p><h4><a name='header-c294' class='md-header-anchor '></a>方式2 <strong>检验合格，即时导入</strong></h4><p>​	<code>用户</code>可多次提交数据，<code>应用系统</code> 依次检验各行数据，一旦合格，即时导入系统。</p><div class="md-diagram-panel" mdtype="math_block"><svg id="mermaidChart2" width="530" xmlns="http://www.w3.org/2000/svg" height="1185" viewBox="-150 -8 530 1185" style="height: 1225px;"><g></g><g><line id="actor4" x1="75" y1="5" x2="75" y2="1188" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="0" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="75" y="37.5" class="actor" style="text-anchor: middle;">用户</text></g><g><line id="actor5" x1="275" y1="5" x2="275" y2="1188" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="200" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="275" y="37.5" class="actor" style="text-anchor: middle;">应用系统</text></g><defs><marker id="arrowhead" refX="5" refY="2" markerWidth="6" markerHeight="4" orient="auto"><path d="M 0,0 V 4 L6,2 Z"></path></marker></defs><defs><marker id="crosshead" markerWidth="15" markerHeight="8" orient="auto" refX="16" refY="4"><path fill="black" stroke="#000000" stroke-width="1px" d="M 9,2 V 6 L16,4 Z" style="stroke-dasharray: 0, 0;"></path><path fill="none" stroke="#000000" stroke-width="1px" d="M 0,1 L 6,7 M 6,1 L 0,7" style="stroke-dasharray: 0, 0;"></path></marker></defs><g><text x="175" y="93" class="messageText" style="text-anchor: middle;">B01-权限请求</text><line x1="75" y1="100" x2="275" y2="100" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><rect x="50" y="120" fill="#EDF2AE" stroke="#666" width="250" height="58" rx="0" ry="0" class="note"></rect><text x="66" y="149" fill="black" class="noteText"><tspan x="66">B02-系统检查权限</tspan><tspan dy="22" x="66">如果失败则流程结束</tspan></text></g><g><text x="175" y="206" class="messageText" style="text-anchor: middle;">B03-提供原始模板的下载方式</text><line x1="275" y1="213" x2="75" y2="213" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><rect x="70" y="215" fill="#f4f4f4" stroke="#666" width="10" height="111" rx="0" ry="0"></rect></g><g><rect x="-100" y="233" fill="#EDF2AE" stroke="#666" width="150" height="58" rx="0" ry="0" class="note"></rect><text x="-84" y="262" fill="black" class="noteText"><tspan x="-84">B04-依照模板</tspan><tspan dy="22" x="-84">填写数据</tspan></text></g><g><text x="177.5" y="319" class="messageText" style="text-anchor: middle;">B05-提交填写好的内容</text><line x1="80" y1="326" x2="275" y2="326" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><rect x="200" y="391" fill="#EDF2AE" stroke="#666" width="150" height="80" rx="0" ry="0" class="note"></rect><text x="216" y="420" fill="black" class="noteText"><tspan x="216">B06-检验提交的数据</tspan><tspan dy="22" x="216">导入有效数据</tspan><tspan dy="22" x="216">带提示输出错误数据</tspan></text></g><g><text x="175" y="544" class="messageText" style="text-anchor: middle;">B07-提示全部数据已验证</text><line x1="275" y1="551" x2="75" y2="551" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="175" y="624" class="messageText" style="text-anchor: middle;">B08-追加新数据</text><line x1="75" y1="631" x2="275" y2="631" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><line x1="55" y1="571" x2="295" y2="571" stroke-width="2" stroke="#526e52" class="loopLine"></line><line x1="295" y1="571" x2="295" y2="651" stroke-width="2" stroke="#526e52" class="loopLine"></line><line x1="55" y1="651" x2="295" y2="651" stroke-width="2" stroke="#526e52" class="loopLine"></line><line x1="55" y1="571" x2="55" y2="651" stroke-width="2" stroke="#526e52" class="loopLine"></line><rect x="55" y="571" fill="#526e52" stroke="none" width="50" height="20" rx="0" ry="0" class="labelBox"></rect><text x="62.5" y="586" fill="white" class="labelText"><tspan x="62.5">opt</tspan></text><text x="175" y="601" fill="black" class="loopText" style="text-anchor: middle;"><tspan x="175">[ 如有新数据需要导入 ]</tspan></text></g><g><text x="175" y="719" class="messageText" style="text-anchor: middle;">B09-提示错误信息</text><line x1="275" y1="726" x2="75" y2="726" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><rect x="50" y="746" fill="#EDF2AE" stroke="#666" width="250" height="36" rx="0" ry="0" class="note"></rect><text x="66" y="775" fill="black" class="noteText"><tspan x="66">B10-用户是否愿意继续？</tspan></text></g><g><text x="175" y="810" class="messageText" style="text-anchor: middle;">B11-提供错误集合的下载方式</text><line x1="275" y1="817" x2="75" y2="817" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><rect x="70" y="819" fill="#f4f4f4" stroke="#666" width="10" height="111" rx="0" ry="0"></rect></g><g><rect x="-100" y="837" fill="#EDF2AE" stroke="#666" width="150" height="58" rx="0" ry="0" class="note"></rect><text x="-84" y="866" fill="black" class="noteText"><tspan x="-84">B12-依照模板提示</tspan><tspan dy="22" x="-84">修改数据</tspan></text></g><g><text x="177.5" y="923" class="messageText" style="text-anchor: middle;">B13-提交修改好的内容</text><line x1="80" y1="930" x2="275" y2="930" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><line x1="-120" y1="491" x2="320" y2="491" stroke-width="2" stroke="#526e52" class="loopLine"></line><line x1="320" y1="491" x2="320" y2="950" stroke-width="2" stroke="#526e52" class="loopLine"></line><line x1="-120" y1="950" x2="320" y2="950" stroke-width="2" stroke="#526e52" class="loopLine"></line><line x1="-120" y1="491" x2="-120" y2="950" stroke-width="2" stroke="#526e52" class="loopLine"></line><line x1="-120" y1="671" x2="320" y2="671" stroke-width="2" stroke="#526e52" class="loopLine"></line><rect x="-120" y="491" fill="#526e52" stroke="none" width="50" height="20" rx="0" ry="0" class="labelBox"></rect><text x="-112.5" y="506" fill="white" class="labelText"><tspan x="-112.5">alt</tspan></text><text x="100" y="521" fill="black" class="loopText" style="text-anchor: middle;"><tspan x="100">[ 如果所有数据已缓存 ]</tspan></text><text x="100" y="701" fill="black" class="loopText" style="text-anchor: middle;"><tspan x="100">[ 如果存在错误数据 ]</tspan></text></g><g><line x1="-140" y1="346" x2="370" y2="346" stroke-width="2" stroke="#526e52" class="loopLine"></line><line x1="370" y1="346" x2="370" y2="970" stroke-width="2" stroke="#526e52" class="loopLine"></line><line x1="-140" y1="970" x2="370" y2="970" stroke-width="2" stroke="#526e52" class="loopLine"></line><line x1="-140" y1="346" x2="-140" y2="970" stroke-width="2" stroke="#526e52" class="loopLine"></line><rect x="-140" y="346" fill="#526e52" stroke="none" width="50" height="20" rx="0" ry="0" class="labelBox"></rect><text x="-132.5" y="361" fill="white" class="labelText"><tspan x="-132.5">loop</tspan></text><text x="115" y="376" fill="black" class="loopText" style="text-anchor: middle;"><tspan x="115">[ 是否存在需要校验的数据 ]</tspan></text></g><g><rect x="200" y="990" fill="#EDF2AE" stroke="#666" width="150" height="58" rx="0" ry="0" class="note"></rect><text x="216" y="1019" fill="black" class="noteText"><tspan x="216">B14-清点数</tspan><tspan dy="22" x="216">据，并完成导入</tspan></text></g><g><text x="175" y="1076" class="messageText" style="text-anchor: middle;">B15-提示导入结果</text><line x1="275" y1="1083" x2="75" y2="1083" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><rect x="0" y="1123" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="75" y="1160.5" class="actor" style="text-anchor: middle;">用户</text></g><g><rect x="200" y="1123" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="275" y="1160.5" class="actor" style="text-anchor: middle;">应用系统</text></g></svg></div><h5><a name='header-c298' class='md-header-anchor '></a>B01:权限请求</h5><p>​	同<strong>A01</strong>。</p><h5><a name='header-c300' class='md-header-anchor '></a>B02:系统检查权限</h5><p>​	同<strong>A02</strong>。</p><h5><a name='header-c303' class='md-header-anchor '></a>B03:提供原始模板的下载方式</h5><p>​	同<strong>A03</strong>。</p><h5><a name='header-c306' class='md-header-anchor '></a>B04:依照模板 填写数据</h5><p>​	同<strong>A04</strong>。</p><h5><a name='header-c309' class='md-header-anchor '></a>B05:提交填写好的内容</h5><p>​	同<strong>A05</strong>。</p><h5><a name='header-c312' class='md-header-anchor '></a>B06:检验提交的数据</h5><p>​	 基本同<strong>A06</strong>，区别在于<strong>B06</strong>，在验证完数据项时，一旦验证该项合格后将即时的导入系统，并将数据项标记为&#39;已导入&#39;。</p><h5><a name='header-c315' class='md-header-anchor '></a>B07:提示全部数据已验证</h5><p>​	同<strong>A07</strong>。</p><h5><a name='header-c318' class='md-header-anchor '></a>B08:追加新数据</h5><p>​	同<strong>A08</strong>。</p><h5><a name='header-c321' class='md-header-anchor '></a>B09:提示错误信息</h5><p>​	同<strong>A09</strong>。</p><h5><a name='header-c324' class='md-header-anchor '></a>B10:用户是否愿意继续</h5><p>​	同<strong>A10</strong>。</p><h5><a name='header-c327' class='md-header-anchor '></a>B11:提供错误集合的下载方式</h5><p>​	同<strong>A11</strong>。</p><h5><a name='header-c330' class='md-header-anchor '></a>B12:依照模板提示 修改数据</h5><p>​	同<strong>A12</strong>。</p><h5><a name='header-c333' class='md-header-anchor '></a>B13:提交修改好的内容</h5><p>​	同<strong>A13</strong>。</p><h5><a name='header-c336' class='md-header-anchor '></a>B14:清点数据，并完成导入</h5><p>​	同<strong>A16</strong>。</p><h5><a name='header-c339' class='md-header-anchor '></a>B15:提示导入结果</h5><p>​	同<strong>A17</strong>。</p></div>
+</body>
+</html>

@@ -1,0 +1,376 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>STIEI-IDS-WF-00-002[日常与项目的资金卡建立流程].md</title><style type='text/css'>html, body {overflow-x: initial !important;}.mermaid .label { color: rgb(51, 51, 51); }
+.node rect, .node circle, .node ellipse, .node polygon { fill: rgb(236, 236, 255); stroke: rgb(204, 204, 255); stroke-width: 1px; }
+.edgePath .path { stroke: rgb(51, 51, 51); }
+.edgeLabel { background-color: rgb(232, 232, 232); }
+.cluster rect { fill: rgb(255, 255, 222) !important; rx: 4 !important; stroke: rgb(170, 170, 51) !important; stroke-width: 1px !important; }
+.cluster text { fill: rgb(51, 51, 51); }
+.actor { stroke: rgb(204, 204, 255); fill: rgb(236, 236, 255); }
+text.actor { fill: black; stroke: none; }
+.actor-line { stroke: grey; }
+.messageLine0 { stroke-width: 1.5; stroke: rgb(51, 51, 51); }
+.messageLine1 { stroke-width: 1.5; stroke: rgb(51, 51, 51); }
+#arrowhead { fill: rgb(51, 51, 51); }
+#crosshead path { fill: rgb(51, 51, 51) !important; stroke: rgb(51, 51, 51) !important; }
+.messageText { fill: rgb(51, 51, 51); stroke: none; }
+.labelBox { stroke: rgb(204, 204, 255); fill: rgb(236, 236, 255); }
+.labelText { fill: black; stroke: none; }
+.loopText { fill: black; stroke: none; }
+.loopLine { stroke-width: 2; stroke: rgb(204, 204, 255); }
+.note { stroke: rgb(170, 170, 51); fill: rgb(255, 245, 173); }
+.noteText { fill: black; stroke: none; font-family: "trebuchet ms", verdana, arial; font-size: 14px; }
+.section { stroke: none; opacity: 0.2; }
+.section0 { fill: rgba(102, 102, 255, 0.490196); }
+.section2 { fill: rgb(255, 244, 0); }
+.section1, .section3 { fill: white; opacity: 0.2; }
+.sectionTitle0 { fill: rgb(51, 51, 51); }
+.sectionTitle1 { fill: rgb(51, 51, 51); }
+.sectionTitle2 { fill: rgb(51, 51, 51); }
+.sectionTitle3 { fill: rgb(51, 51, 51); }
+.sectionTitle { text-anchor: start; font-size: 11px; }
+.grid .tick { stroke: lightgrey; opacity: 0.3; shape-rendering: crispEdges; }
+.grid path { stroke-width: 0; }
+.today { fill: none; stroke: red; stroke-width: 2px; }
+.task { stroke-width: 2; }
+.taskText { text-anchor: middle; font-size: 11px; }
+.taskTextOutsideRight { fill: black; text-anchor: start; font-size: 11px; }
+.taskTextOutsideLeft { fill: black; text-anchor: end; font-size: 11px; }
+.taskText0, .taskText1, .taskText2, .taskText3 { fill: white; }
+.task0, .task1, .task2, .task3 { fill: rgb(138, 144, 221); stroke: rgb(83, 79, 188); }
+.taskTextOutside0, .taskTextOutside2 { fill: black; }
+.taskTextOutside1, .taskTextOutside3 { fill: black; }
+.active0, .active1, .active2, .active3 { fill: rgb(191, 199, 255); stroke: rgb(83, 79, 188); }
+.activeText0, .activeText1, .activeText2, .activeText3 { fill: black !important; }
+.done0, .done1, .done2, .done3 { stroke: grey; fill: lightgrey; stroke-width: 2; }
+.doneText0, .doneText1, .doneText2, .doneText3 { fill: black !important; }
+.crit0, .crit1, .crit2, .crit3 { stroke: rgb(255, 136, 136); fill: red; stroke-width: 2; }
+.activeCrit0, .activeCrit1, .activeCrit2, .activeCrit3 { stroke: rgb(255, 136, 136); fill: rgb(191, 199, 255); stroke-width: 2; }
+.doneCrit0, .doneCrit1, .doneCrit2, .doneCrit3 { stroke: rgb(255, 136, 136); fill: lightgrey; stroke-width: 2; cursor: pointer; shape-rendering: crispEdges; }
+.doneCritText0, .doneCritText1, .doneCritText2, .doneCritText3 { fill: black !important; }
+.activeCritText0, .activeCritText1, .activeCritText2, .activeCritText3 { fill: black !important; }
+.titleText { text-anchor: middle; font-size: 18px; fill: black; }
+.node text { font-family: "trebuchet ms", verdana, arial; font-size: 14px; }
+div.mermaidTooltip { position: absolute; text-align: center; max-width: 200px; padding: 2px; font-family: "trebuchet ms", verdana, arial; font-size: 12px; background: rgb(255, 255, 222); border: 1px solid rgb(170, 170, 51); border-radius: 2px; pointer-events: none; z-index: 100; }
+#write .md-diagram-panel .md-diagram-panel-preview div { width: initial; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror-scroll { overflow-y: hidden; overflow-x: auto; }
+.CodeMirror-lines { padding: 4px 0px; }
+.CodeMirror pre { }
+.CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler { background-color: white; }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background-color: rgb(247, 247, 247); white-space: nowrap; }
+.CodeMirror-linenumbers { }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.CodeMirror div.CodeMirror-cursor { border-left: 1px solid black; z-index: 3; }
+.CodeMirror div.CodeMirror-secondarycursor { border-left: 1px solid silver; }
+.CodeMirror.cm-keymap-fat-cursor div.CodeMirror-cursor { width: auto; border: 0px; background: rgb(119, 238, 119); z-index: 1; }
+.CodeMirror div.CodeMirror-cursor.CodeMirror-overwrite { }
+.cm-tab { display: inline-block; }
+.cm-s-typora-default .cm-header, .cm-s-typora-default .cm-property { color: rgb(217, 79, 138); }
+.cm-s-typora-default pre.cm-header1:not(.cm-atom) :not(.cm-overlay) { font-size: 2rem; line-height: 2rem; }
+.cm-s-typora-default pre.cm-header2:not(.cm-atom) :not(.cm-overlay) { font-size: 1.4rem; line-height: 1.4rem; }
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number { color: rgb(149, 132, 134); }
+.cm-s-typora-default .cm-table-row, .cm-s-typora-default .cm-block-start { font-family: monospace; }
+.cm-s-typora-default .cm-comment, .cm-s-typora-default .cm-code { color: rgb(74, 90, 159); font-family: monospace; }
+.cm-s-typora-default .cm-tag { color: rgb(169, 68, 66); }
+.cm-s-typora-default .cm-string { color: rgb(126, 134, 169); }
+.cm-s-typora-default .cm-link { color: rgb(196, 122, 15); text-decoration: underline; }
+.cm-s-typora-default .cm-variable-2, .cm-s-typora-default .cm-variable-1 { color: inherit; }
+.cm-s-typora-default .cm-overlay { font-size: 1rem; font-family: monospace; }
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor { border-left: 3px solid rgb(228, 98, 154); }
+.cm-s-typora-default .CodeMirror-activeline-background { left: -60px; right: -30px; background: rgba(204, 204, 204, 0.2); }
+.cm-s-typora-default .CodeMirror-gutters { border-right: none; background-color: inherit; }
+.cm-s-typora-default .cm-trailing-space-new-line::after, .cm-startspace::after, .cm-starttab .cm-tab::after { content: "•"; position: absolute; left: 0px; opacity: 0; font-family: LetterGothicStd, monospace; }
+.os-windows .cm-startspace::after, .os-windows .cm-starttab .cm-tab::after { left: -0.1em; }
+.cm-starttab .cm-tab::after { content: " "; }
+.cm-startspace, .cm-tab, .cm-starttab, .cm-trailing-space-a, .cm-trailing-space-b, .cm-trailing-space-new-line { font-family: monospace; position: relative; }
+.cm-s-typora-default .cm-trailing-space-new-line::after { content: "↓"; opacity: 0.3; }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: black; }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-property { color: black; }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: blue; }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: bold; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: rgb(255, 0, 0); }
+.cm-invalidchar { color: rgb(255, 0, 0); }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { margin-bottom: -30px; margin-right: -30px; padding-bottom: 30px; padding-right: 30px; height: 100%; outline: none; position: relative; box-sizing: content-box; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-vscrollbar, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler { position: absolute; z-index: 6; display: none; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow-x: hidden; overflow-y: scroll; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow-y: hidden; overflow-x: scroll; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 30px; z-index: 3; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: transparent; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; word-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { word-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-widget { }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.CodeMirror-selected { background: rgb(217, 217, 217); }
+.CodeMirror-focused .CodeMirror-selected { background: rgb(215, 212, 240); }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+.CodeMirror span { }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+.CodeMirror-lint-markers { width: 16px; }
+.CodeMirror-lint-tooltip { background-color: infobackground; border: 1px solid black; border-radius: 4px; color: infotext; font-family: monospace; overflow: hidden; padding: 2px 5px; position: fixed; white-space: pre-wrap; z-index: 10000; max-width: 600px; opacity: 0; transition: opacity 0.4s; font-size: 0.8em; }
+.CodeMirror-lint-mark-error, .CodeMirror-lint-mark-warning { background-position: left bottom; background-repeat: repeat-x; }
+.CodeMirror-lint-mark-error { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAYAAAC09K7GAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9sJDw4cOCW1/KIAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAAHElEQVQI12NggIL/DAz/GdA5/xkY/qPKMDAwAADLZwf5rvm+LQAAAABJRU5ErkJggg=="); }
+.CodeMirror-lint-marker-error, .CodeMirror-lint-marker-warning { background-position: center center; background-repeat: no-repeat; cursor: pointer; display: inline-block; height: 16px; width: 16px; vertical-align: middle; position: relative; }
+.CodeMirror-lint-message-error, .CodeMirror-lint-message-warning { padding-left: 18px; background-position: left top; background-repeat: no-repeat; }
+.CodeMirror-lint-marker-error, .CodeMirror-lint-message-error { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAHlBMVEW7AAC7AACxAAC7AAC7AAAAAAC4AAC5AAD///+7AAAUdclpAAAABnRSTlMXnORSiwCK0ZKSAAAATUlEQVR42mWPOQ7AQAgDuQLx/z8csYRmPRIFIwRGnosRrpamvkKi0FTIiMASR3hhKW+hAN6/tIWhu9PDWiTGNEkTtIOucA5Oyr9ckPgAWm0GPBog6v4AAAAASUVORK5CYII="); }
+.CodeMirror-lint-marker-warning, .CodeMirror-lint-message-warning { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAANlBMVEX/uwDvrwD/uwD/uwD/uwD/uwD/uwD/uwD/uwD6twD/uwAAAADurwD2tQD7uAD+ugAAAAD/uwDhmeTRAAAADHRSTlMJ8mN1EYcbmiixgACm7WbuAAAAVklEQVR42n3PUQqAIBBFUU1LLc3u/jdbOJoW1P08DA9Gba8+YWJ6gNJoNYIBzAA2chBth5kLmG9YUoG0NHAUwFXwO9LuBQL1giCQb8gC9Oro2vp5rncCIY8L8uEx5ZkAAAAASUVORK5CYII="); }
+.CodeMirror-lint-marker-multiple { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAMAAADzjKfhAAAACVBMVEUAAAAAAAC/v7914kyHAAAAAXRSTlMAQObYZgAAACNJREFUeNo1ioEJAAAIwmz/H90iFFSGJgFMe3gaLZ0od+9/AQZ0ADosbYraAAAAAElFTkSuQmCC"); background-repeat: no-repeat; background-position: right bottom; width: 100%; height: 100%; }
+
+
+html { font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(51, 51, 51); }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { background: rgb(181, 214, 252); text-shadow: none; }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; padding-bottom: 70px; white-space: pre-wrap; overflow-x: auto; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+.typora-export #write { margin: 0px auto; }
+#write > p:first-child, #write > ul:first-child, #write > ol:first-child, #write > pre:first-child, #write > blockquote:first-child, #write > div:first-child, #write > table:first-child { margin-top: 30px; }
+#write li > table:first-child { margin-top: -20px; }
+img { max-width: 100%; vertical-align: middle; }
+input, button, select, textarea { color: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+::before, ::after, * { box-sizing: border-box; }
+#write p, #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write div, #write pre { width: inherit; }
+#write p, #write h1, #write h2, #write h3, #write h4, #write h5, #write h6 { position: relative; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+p { -webkit-margin-before: 1rem; -webkit-margin-after: 1rem; -webkit-margin-start: 0px; -webkit-margin-end: 0px; }
+.mathjax-block { margin-top: 0px; margin-bottom: 0px; -webkit-margin-before: 0rem; -webkit-margin-after: 0rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: bold; font-style: italic; }
+a { cursor: pointer; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; margin: 4px 0px 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 80px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+pre { white-space: pre-wrap; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+.md-fences .CodeMirror.CodeMirror-wrap { top: -1.6em; margin-bottom: -1.6em; }
+.md-fences.mock-cm { white-space: pre-wrap; }
+.show-fences-line-number .md-fences { padding-left: 0px; }
+.show-fences-line-number .md-fences.mock-cm { padding-left: 40px; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; padding-top: 1em; padding-bottom: 1em; }
+.footnotes + .footnotes { margin-top: -1em; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: transparent; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: normal; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li p, li .mathjax-block { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; }
+@media print {
+  html, body { height: 100%; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  h1, h2, h3, h4, h5, h6 { break-after: avoid-page; orphans: 2; }
+  p { orphans: 4; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 1cm; padding-right: 1cm; }
+  .typora-export #write::after { height: 0px; }
+  @page { margin: 20mm 0mm; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 2.86rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p .md-image:only-child { display: inline-block; width: 100%; text-align: center; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.mathjax-block { white-space: pre; overflow: hidden; width: 100%; }
+p + .mathjax-block { margin-top: -1.143rem; }
+.mathjax-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus { outline: none; box-shadow: none; }
+.task-list { list-style-type: none; }
+.task-list-item { position: relative; padding-left: 1em; }
+.task-list-item input { position: absolute; top: 0px; left: 0px; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc::after, .md-toc-content::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); text-decoration: none; }
+.md-toc-inner:hover { }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: bold; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+.md-tag { opacity: 0.5; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: monospace; }
+code { text-align: left; }
+h1 .md-tag, h2 .md-tag, h3 .md-tag, h4 .md-tag, h5 .md-tag, h6 .md-tag { font-weight: initial; opacity: 0.35; }
+a.md-print-anchor { border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: none !important; background: transparent !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.mathjax-block .MathJax_SVG_Display { text-align: center; margin: 1em 0em; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: monospace; }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: normal; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none; }
+
+
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: normal; src: local("Open Sans Regular"), url("./github/400.woff") format("woff"); }
+@font-face { font-family: "Open Sans"; font-style: italic; font-weight: normal; src: local("Open Sans Italic"), url("./github/400i.woff") format("woff"); }
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: bold; src: local("Open Sans Bold"), url("./github/700.woff") format("woff"); }
+@font-face { font-family: "Open Sans"; font-style: italic; font-weight: bold; src: local("Open Sans Bold Italic"), url("./github/700i.woff") format("woff"); }
+html { font-size: 16px; }
+body { font-family: "Open Sans", "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; color: rgb(51, 51, 51); line-height: 1.6; }
+#write { max-width: 860px; margin: 0px auto; padding: 20px 30px 100px; }
+#write > ul:first-child, #write > ol:first-child { margin-top: 30px; }
+body > :first-child { margin-top: 0px !important; }
+body > :last-child { margin-bottom: 0px !important; }
+a { color: rgb(65, 131, 196); }
+h1, h2, h3, h4, h5, h6 { position: relative; margin-top: 1rem; margin-bottom: 1rem; font-weight: bold; line-height: 1.4; cursor: text; }
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor { text-decoration: none; }
+h1 tt, h1 code { font-size: inherit; }
+h2 tt, h2 code { font-size: inherit; }
+h3 tt, h3 code { font-size: inherit; }
+h4 tt, h4 code { font-size: inherit; }
+h5 tt, h5 code { font-size: inherit; }
+h6 tt, h6 code { font-size: inherit; }
+h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom: 1px solid rgb(238, 238, 238); }
+h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom: 1px solid rgb(238, 238, 238); }
+h3 { font-size: 1.5em; line-height: 1.43; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1em; }
+h6 { font-size: 1em; color: rgb(119, 119, 119); }
+p, blockquote, ul, ol, dl, table { margin: 0.8em 0px; }
+li > ol, li > ul { margin: 0px; }
+hr { height: 4px; padding: 0px; margin: 16px 0px; background-color: rgb(231, 231, 231); border-width: 0px 0px 1px; border-style: none none solid; border-top-color: initial; border-right-color: initial; border-left-color: initial; border-image: initial; overflow: hidden; box-sizing: content-box; border-bottom-color: rgb(221, 221, 221); }
+body > h2:first-child { margin-top: 0px; padding-top: 0px; }
+body > h1:first-child { margin-top: 0px; padding-top: 0px; }
+body > h1:first-child + h2 { margin-top: 0px; padding-top: 0px; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child { margin-top: 0px; padding-top: 0px; }
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 { margin-top: 0px; padding-top: 0px; }
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p { margin-top: 0px; }
+li p.first { display: inline-block; }
+ul, ol { padding-left: 30px; }
+ul:first-child, ol:first-child { margin-top: 0px; }
+ul:last-child, ol:last-child { margin-bottom: 0px; }
+blockquote { border-left: 4px solid rgb(221, 221, 221); padding: 0px 15px; color: rgb(119, 119, 119); }
+blockquote blockquote { padding-right: 0px; }
+table { padding: 0px; word-break: initial; }
+table tr { border-top: 1px solid rgb(204, 204, 204); background-color: white; margin: 0px; padding: 0px; }
+table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+table tr th { font-weight: bold; border: 1px solid rgb(204, 204, 204); text-align: left; margin: 0px; padding: 6px 13px; }
+table tr td { border: 1px solid rgb(204, 204, 204); text-align: left; margin: 0px; padding: 6px 13px; }
+table tr th:first-child, table tr td:first-child { margin-top: 0px; }
+table tr th:last-child, table tr td:last-child { margin-bottom: 0px; }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); }
+.md-fences, code, tt { border: 1px solid rgb(221, 221, 221); background-color: rgb(248, 248, 248); border-radius: 3px; font-family: Consolas, "Liberation Mono", Courier, monospace; padding: 2px 4px 0px; font-size: 0.9em; }
+.md-fences { margin-bottom: 15px; margin-top: 15px; padding: 8px 1em 6px; }
+.task-list { padding-left: 0px; }
+.task-list-item { padding-left: 32px; }
+.task-list-item input { top: 3px; left: 8px; }
+@media screen and (min-width: 914px) {
+}
+@media print {
+  html { font-size: 13px; }
+  table, pre { break-inside: avoid; }
+  pre { word-wrap: break-word; }
+}
+.md-fences { background-color: rgb(248, 248, 248); }
+#write pre.md-meta-block { padding: 1rem; font-size: 85%; line-height: 1.45; background-color: rgb(247, 247, 247); border: 0px; border-radius: 3px; color: rgb(119, 119, 119); margin-top: 0px !important; }
+.mathjax-block > .code-tooltip { bottom: 0.375rem; }
+#write > h3.md-focus::before { left: -1.5625rem; top: 0.375rem; }
+#write > h4.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+#write > h5.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+#write > h6.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+.md-image > .md-meta { border: 1px solid rgb(221, 221, 221); border-radius: 3px; font-family: Consolas, "Liberation Mono", Courier, monospace; padding: 2px 4px 0px; font-size: 0.9em; color: inherit; }
+.md-tag { color: inherit; }
+.md-toc { margin-top: 20px; padding-bottom: 20px; }
+#typora-quick-open { border: 1px solid rgb(221, 221, 221); background-color: rgb(248, 248, 248); }
+#typora-quick-open-item { background-color: rgb(250, 250, 250); border-color: rgb(254, 254, 254) rgb(229, 229, 229) rgb(229, 229, 229) rgb(238, 238, 238); border-style: solid; border-width: 1px; }
+#md-notification::before { top: 10px; }
+.on-focus-mode blockquote { border-left-color: rgba(85, 85, 85, 0.117647); }
+header, .context-menu, .megamenu-content, footer { font-family: "Segoe UI", Arial, sans-serif; }
+
+
+
+
+
+
+</style>
+</head>
+<body class='typora-export' >
+<div  id='write'  class = 'is-node'><p></p><h1><a name='header-c8' class='md-header-anchor '></a>日常与项目的资金卡建立流程</h1><table><thead><tr><th>文档编号</th><th>STIEI-IDS-WF-00-002  [Information-DesignSpecification-Workflow-002]</th></tr></thead><tbody><tr><td>名称</td><td>信息化项目通用操作设计规范：日常与项目的资金卡建立流程</td></tr><tr><td>版本</td><td>WF.01.20170304</td></tr><tr><td>发布日期</td><td>2017年3月4日</td></tr><tr><td>编写人</td><td><strong>上海电子信息职业技术学院 </strong>与<strong>上海电子工业学校 </strong>信息化建设小组</td></tr></tbody></table><p></p><p>文档审批：</p><table><thead><tr><th>版本</th><th>审批人</th><th>备注</th><th>签字</th><th>审批日期</th></tr></thead><tbody><tr><td>WF.01.20170321</td><td></td><td></td><td></td><td></td></tr></tbody></table><p></p><p>文档修订：</p><table><thead><tr><th>版本</th><th>作者</th><th>内容</th><th>历史</th><th>修改日期</th></tr></thead><tbody><tr><td>WF.01.20170304</td><td>徐御</td><td></td><td>首次发布</td><td>2017.03.04.0251</td></tr><tr><td>WF.01.20170321</td><td>徐御</td><td></td><td>流程修改</td><td>2017.03.21.1321</td></tr></tbody></table><h2><a name='header-c65' class='md-header-anchor '></a>目录</h2><div class='md-toc' mdtype='toc'><p class="md-toc-content"><span class="md-toc-item md-toc-h1" data-ref="c8"><a class="md-toc-inner" href="#header-c8">日常与项目的资金卡建立流程</a></span><span class="md-toc-item md-toc-h2" data-ref="c65"><a class="md-toc-inner" href="#header-c65">目录</a></span><span class="md-toc-item md-toc-h2" data-ref="c67"><a class="md-toc-inner" href="#header-c67">概要</a></span><span class="md-toc-item md-toc-h3" data-ref="c68"><a class="md-toc-inner" href="#header-c68">流程简介</a></span><span class="md-toc-item md-toc-h3" data-ref="c71"><a class="md-toc-inner" href="#header-c71">术语与缩写</a></span><span class="md-toc-item md-toc-h3" data-ref="c88"><a class="md-toc-inner" href="#header-c88">角色与行为列表</a></span><span class="md-toc-item md-toc-h3" data-ref="c111"><a class="md-toc-inner" href="#header-c111">任务说明</a></span><span class="md-toc-item md-toc-h3" data-ref="c116"><a class="md-toc-inner" href="#header-c116">角色与行为详细说明</a></span><span class="md-toc-item md-toc-h4" data-ref="c117"><a class="md-toc-inner" href="#header-c117">1.资金卡</a></span><span class="md-toc-item md-toc-h4" data-ref="c122"><a class="md-toc-inner" href="#header-c122">2.二级预算</a></span><span class="md-toc-item md-toc-h4" data-ref="c127"><a class="md-toc-inner" href="#header-c127">3.三级预算</a></span><span class="md-toc-item md-toc-h2" data-ref="c139"><a class="md-toc-inner" href="#header-c139">流程图</a></span><span class="md-toc-item md-toc-h3" data-ref="c140"><a class="md-toc-inner" href="#header-c140">流程图格式说明</a></span><span class="md-toc-item md-toc-h3" data-ref="c158"><a class="md-toc-inner" href="#header-c158">工作流程图</a></span><span class="md-toc-item md-toc-h3" data-ref="c163"><a class="md-toc-inner" href="#header-c163">工作流节点详细说明</a></span><span class="md-toc-item md-toc-h4" data-ref="c164"><a class="md-toc-inner" href="#header-c164">F01 资金卡线下审批流程</a></span><span class="md-toc-item md-toc-h4" data-ref="c167"><a class="md-toc-inner" href="#header-c167">N02 财务建卡</a></span><span class="md-toc-item md-toc-h4" data-ref="c202"><a class="md-toc-inner" href="#header-c202">N03 二三级预算导入</a></span><span class="md-toc-item md-toc-h4" data-ref="c232"><a class="md-toc-inner" href="#header-c232">N04 预算审核</a></span><span class="md-toc-item md-toc-h4" data-ref="c262"><a class="md-toc-inner" href="#header-c262">N05 院长启动</a></span><span class="md-toc-item md-toc-h4" data-ref="c292"><a class="md-toc-inner" href="#header-c292">A06 是否需要承诺书</a></span><span class="md-toc-item md-toc-h4" data-ref="c295"><a class="md-toc-inner" href="#header-c295">N07 院办下发承诺书</a></span><span class="md-toc-item md-toc-h4" data-ref="c319"><a class="md-toc-inner" href="#header-c319">N08 负责人确认</a></span><span class="md-toc-item md-toc-h4" data-ref="c343"><a class="md-toc-inner" href="#header-c343">N09分配二级执行人</a></span><span class="md-toc-item md-toc-h4" data-ref="c367"><a class="md-toc-inner" href="#header-c367">X01 流程[N04]前可主动放弃</a></span></p></div><h2><a name='header-c67' class='md-header-anchor '></a>概要</h2><h3><a name='header-c68' class='md-header-anchor '></a>流程简介</h3><p>​	此文档用于定义上海电子信息学院与上海电子工业学校信息化项目建设中，关于资金卡系统里日常与项目类别的资金卡建立流程。</p><h3><a name='header-c71' class='md-header-anchor '></a>术语与缩写</h3><table><thead><tr><th>术语或者缩写名称</th><th>术语或者缩写说明</th></tr></thead><tbody><tr><td>QR码</td><td>一种基于QR编码的二维码</td></tr><tr><td>API</td><td>应用程序开发接口（目前为Restful API)</td></tr><tr><td>线上签名组件</td><td>详情见文档 STIEI-IDS-A002[标准操作规范-线上电子签名]</td></tr><tr><td>批量数据导入</td><td>详情见文档 STIEI-IDS-A001[标准操作规范-批量数据导入</td></tr></tbody></table><h3><a name='header-c88' class='md-header-anchor '></a>角色与行为列表</h3><table><thead><tr><th>角色或者行为</th><th>定义</th></tr></thead><tbody><tr><td>资金卡系统</td><td>资金卡管理系统1期</td></tr><tr><td>用户</td><td>正在操作系统的人员</td></tr><tr><td>发起人</td><td>整个流程的实际发起人，节点F01的启动者</td></tr><tr><td>资金卡</td><td>详见本文档的“角色与行为详细说明 1”</td></tr><tr><td>二级预算</td><td>详见本文档的“角色与行为详细说明 2”</td></tr><tr><td>三级预算</td><td>详见本文档的“角色与行为详细说明 3”</td></tr></tbody></table><h3><a name='header-c111' class='md-header-anchor '></a>任务说明</h3><p> 	本设计规范的目的是指导 <code>应用系统</code>在遇到该类任务时，应该向<code>用户</code>提供何种统一的用户体验。</p><p>​	所谓“付款凭证报销流程”是指当<code>用户</code>在<code>资金卡系统</code>里想完成一笔资金报销所需要的业务操作步骤流程。</p><h3><a name='header-c116' class='md-header-anchor '></a>角色与行为详细说明</h3><h4><a name='header-c117' class='md-header-anchor '></a>1.资金卡</h4><p>​	<strong>资金卡</strong>是<code>资金卡系统</code>最为重要的业务逻辑单元。它是系统中所有资金的最大分组依据。</p><p>​	每本<strong>资金卡</strong>包含的元数据有 <em>资金卡名称</em>、<em>资金卡编号</em>、<em>资金卡分管院领导</em>、<em>资金卡负责人</em>、<em>是否需要院长签字</em>、<em>是否需要院办下发承诺书</em>、<em>预计结束日期</em>  、<em>二级预算项目[集合]</em>、<em>三级预算项目[集合]</em> 等基础数据。而在每本<strong>资金卡</strong>的旗下又从属了许多的<strong>三级预算</strong>。<strong>三级预算</strong>与<strong>资金卡</strong>构成树形结构，而所有<strong>三级预算</strong>的费用总和为所从属的<strong>资金卡</strong>总额。</p><h4><a name='header-c122' class='md-header-anchor '></a>2.二级预算</h4><p>​	单本资金卡内<strong>三级预算</strong> 中的“二级预算名称” 数据项分组集合。</p><p>​	每个<strong>二级预算</strong> 包含的元数据有 <em>二级预算执行人</em> 、<em>三级预算项目[集合]</em> 等基础数据。由于<em>二级预算</em> 是通过 <em>三级预算</em> 中 &quot;二级预算名称&quot;汇总生成，所以	<code>资金卡系统</code> 无需在预算拟定时，单独处理 <em>二级预算</em> 的建立工作，而应该在导入整个 <strong>资金卡</strong> 数据时，自动生成该资金卡的 <em>二级预算</em> 项。再在后期由有相应权限的<code>用户</code>指定每个 <em>二级预算</em> 的负责人。</p><h4><a name='header-c127' class='md-header-anchor '></a>3.三级预算</h4><p> 	<strong>三级预算</strong>是<code>资金卡系统</code>中最小的预算单元，它限定了单笔<strong>付款凭证</strong>在该三级预算内的最大上限。</p><p>​	每个<strong>三级预算</strong> 包含的元数据有 <em>预算总额</em>、<em>当前余额</em>、<em>当前冻结付款项目[集合]</em> 、*已完成付款项目[集合] *等基础数据。</p><blockquote><p>设计规范：</p><p> 	<code>资金卡系统</code>应在<strong>资金卡</strong>的实际运行中，为每个<strong>三级预算</strong>设定一个当前余额的数据项，该数值默认为当前<strong>三级预算</strong>的预算总额。余额不得大于所属三级预算的预算总额。但余额可以为负数，此时表示该三级预算正处于超额使用情况。但是<code>资金卡系统</code> 必须严格控制整本<strong>资金卡</strong>不得出现超额使用的情况。</p></blockquote><p></p><h2><a name='header-c139' class='md-header-anchor '></a>流程图</h2><h3><a name='header-c140' class='md-header-anchor '></a>流程图格式说明</h3><div class="md-diagram-panel" mdtype="math_block"><svg id="mermaidChart0" width="411.1999969482422" xmlns="http://www.w3.org/2000/svg" height="320.1999969482422" viewBox="0 0 431.1999969482422 340.1999969482422" style="height: 380.2px;"><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath" style="opacity: 1;"><path class="path" d="M59,110.5999984741211L59,171.6999969482422L148.33526071731035,229.27936420744612" marker-end="url(#arrowhead12)" style="fill:none"></path><defs><marker id="arrowhead12" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M187,110.5999984741211L187,171.6999969482422L187,208.1999969482422" marker-end="url(#arrowhead13)" style="fill:none"></path><defs><marker id="arrowhead13" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M334.0999984741211,135.69999847412106L333.5999984741211,171.6999969482422L227.08809212400527,231.6401904362779" marker-end="url(#arrowhead14)" style="fill:none"></path><defs><marker id="arrowhead14" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" style="opacity: 1;" transform="translate(59,171.6999969482422)"><g transform="translate(-29,-11.5)" class="label"><foreignObject width="58" height="23"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel">执行方向</span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform="translate(187,171.6999969482422)"><g transform="translate(-29,-11.5)" class="label"><foreignObject width="58" height="23"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel">执行方向</span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform="translate(333.5999984741211,171.6999969482422)"><g transform="translate(-29,-11.5)" class="label"><foreignObject width="58" height="23"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel">执行方向</span></div></foreignObject></g></g></g><g class="nodes"><g class="node" id="A" transform="translate(59,77.5999984741211)" style="opacity: 1;"><rect rx="5" ry="5" x="-39" y="-33" width="78" height="66" style="fill:#f9f;stroke:#333;stroke-width:4px;"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-29,-23)"><foreignObject width="58" height="46"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml">[编号]<br>线下任务</div></foreignObject></g></g></g><g class="node" id="B" transform="translate(187,77.5999984741211)" style="opacity: 1;"><rect rx="0" ry="0" x="-39" y="-33" width="78" height="66"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-29,-23)"><foreignObject width="58" height="46"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml">[编号]<br>线上任务</div></foreignObject></g></g></g><g class="node" id="C" transform="translate(333.5999984741211,77.5999984741211)" style="opacity: 1;"><polygon points="57.6,0 115.2,-57.6 57.6,-115.2 0,-57.6" rx="5" ry="5" transform="translate(-57.6,57.6)"></polygon><g class="label" transform="translate(0,0)"><g transform="translate(-29,-23)"><foreignObject width="58" height="46"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml">[编号]<br>系统任务</div></foreignObject></g></g></g><g class="node" id="E" transform="translate(187,254.1999969482422)" style="opacity: 1;"><circle x="-46" y="-21.5" r="46"></circle><g class="label" transform="translate(0,0)"><g transform="translate(-36,-11.5)"><foreignObject width="72" height="23"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml">开始与结束</div></foreignObject></g></g></g></g></g></g></svg></div><ul><li><p>线下任务：</p><p>一般指在线下手工完成的任务，具体的操作不通过信息化系统完成。编号以&quot;F&quot;开始。</p></li><li><p>线上任务：</p><p>一般指在线上通过信息化心痛完成的任务，任务名称由<strong>执行人</strong>、<strong>执行操作</strong>构成。编号以&quot;N&quot;开始。</p></li><li><p>系统任务：</p><p>一般指在由信息化系统自动完成的任务，任务名称由<strong>执行操作</strong>构成。编号以&quot;A&quot;开始。</p></li></ul><h3><a name='header-c158' class='md-header-anchor '></a>工作流程图</h3><div class="md-diagram-panel" mdtype="math_block"><svg id="mermaidChart1" width="394.9000015258789" xmlns="http://www.w3.org/2000/svg" height="1447.8000030517578" viewBox="0 0 414.9000015258789 1467.8000030517578" style="height: 1507.8px;"><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath" style="opacity: 1;"><path class="path" d="M291.4000015258789,86L291.4000015258789,122.5L291.4000015258789,159" marker-end="url(#arrowhead92)" style="fill:none"></path><defs><marker id="arrowhead92" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M252.4000015258789,213.40018906029283L185.70000076293945,250L185.70000076293945,275" marker-end="url(#arrowhead93)" style="fill:none"></path><defs><marker id="arrowhead93" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M193.7719432089826,341L202.70000076293945,377.5L170.66402953991786,414" marker-end="url(#arrowhead94)" style="fill:none"></path><defs><marker id="arrowhead94" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M126.8856119114718,414L110.5,377.5L149.99352558053656,341" marker-end="url(#arrowhead95)" style="fill:none"></path><defs><marker id="arrowhead95" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M157.60647558308335,480L175.20000076293945,516.5L141.22086367161154,553" marker-end="url(#arrowhead96)" style="fill:none"></path><defs><marker id="arrowhead96" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M107.17625899280576,553L103.5,516.5L123.56187090427755,480" marker-end="url(#arrowhead97)" style="fill:none"></path><defs><marker id="arrowhead97" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M110.5,619L110.5,655.5L111.00000000000001,692.5000015258789" marker-end="url(#arrowhead98)" style="fill:none"></path><defs><marker id="arrowhead98" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M138.35917765914954,813.9408208149715L175,877.3000030517578L175,946.8000030517578L175,1016.3000030517578L175,1085.8000030517578L175,1155.3000030517578L141.12589928057554,1191.8000030517578" marker-end="url(#arrowhead99)" style="fill:none"></path><defs><marker id="arrowhead99" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M94.95190964984047,825.2519111757194L80,877.3000030517578L80,913.8000030517578" marker-end="url(#arrowhead100)" style="fill:none"></path><defs><marker id="arrowhead100" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M80,979.8000030517578L80,1016.3000030517578L80,1052.8000030517578" marker-end="url(#arrowhead101)" style="fill:none"></path><defs><marker id="arrowhead101" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M80,1118.8000030517578L80,1155.3000030517578L96.0179856115108,1191.8000030517578" marker-end="url(#arrowhead102)" style="fill:none"></path><defs><marker id="arrowhead102" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M110.5,1257.8000030517578L110.5,1282.8000030517578L110.5,1307.8000030517578" marker-end="url(#arrowhead103)" style="fill:none"></path><defs><marker id="arrowhead103" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M308.753449801741,225L321.9000015258789,250L321.9000015258789,308L321.9000015258789,377.5L321.9000015258789,447L321.9000015258789,516.5L304.0438864179652,553" marker-end="url(#arrowhead104)" style="fill:none"></path><defs><marker id="arrowhead104" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M221.07410148236391,341L260.20000076293945,377.5L260.20000076293945,447L260.20000076293945,516.5L274.7474831780084,553" marker-end="url(#arrowhead105)" style="fill:none"></path><defs><marker id="arrowhead105" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M180.39784248955817,480L223.20000076293945,516.5L257.17913785426737,553" marker-end="url(#arrowhead106)" style="fill:none"></path><defs><marker id="arrowhead106" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M287.9000015258789,619L287.9000015258789,655.5L287.9000015258789,713.4000015258789" marker-end="url(#arrowhead107)" style="fill:none"></path><defs><marker id="arrowhead107" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" style="opacity: 1;" transform="translate(291.4000015258789,122.5)"><g transform="translate(-29,-11.5)" class="label"><foreignObject width="58" height="23"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel">邮件通知</span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform="translate(110.5,377.5)"><g transform="translate(-14,-11.5)" class="label"><foreignObject width="28" height="23"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel">退回</span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform="translate(175.20000076293945,516.5)"><g transform="translate(-14,-11.5)" class="label"><foreignObject width="28" height="23"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel">通过</span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform="translate(103.5,516.5)"><g transform="translate(-14,-11.5)" class="label"><foreignObject width="28" height="23"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel">退回</span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform="translate(110.5,655.5)"><g transform="translate(-14,-11.5)" class="label"><foreignObject width="28" height="23"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel">通过</span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform="translate(175,1016.3000030517578)"><g transform="translate(-22,-11.5)" class="label"><foreignObject width="44" height="23"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel">不需要</span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform="translate(80,877.3000030517578)"><g transform="translate(-22,-11.5)" class="label"><foreignObject width="44" height="23"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel">有必要</span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform="translate(80,1016.3000030517578)"><g transform="translate(-22,-11.5)" class="label"><foreignObject width="44" height="23"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel">有必要</span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform="translate(80,1155.3000030517578)"><g transform="translate(-14,-11.5)" class="label"><foreignObject width="28" height="23"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel">确认</span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform="translate(321.9000015258789,377.5)"><g transform="translate(-14,-11.5)" class="label"><foreignObject width="28" height="23"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel">放弃</span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform="translate(260.20000076293945,447)"><g transform="translate(-14,-11.5)" class="label"><foreignObject width="28" height="23"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel">放弃</span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform="translate(223.20000076293945,516.5)"><g transform="translate(-14,-11.5)" class="label"><foreignObject width="28" height="23"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel">放弃</span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node" id="F01" transform="translate(291.4000015258789,53)" style="opacity: 1;"><rect rx="5" ry="5" x="-75" y="-33" width="150" height="66" style="fill:#f9f;stroke:#333;stroke-width:4px;"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-65,-23)"><foreignObject width="130" height="46"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml">[F01]<br>资金卡线下审批流程</div></foreignObject></g></g></g><g class="node" id="N02" transform="translate(291.4000015258789,192)" style="opacity: 1;"><rect rx="0" ry="0" x="-39" y="-33" width="78" height="66"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-29,-23)"><foreignObject width="58" height="46"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml">[N02]<br>财务建卡</div></foreignObject></g></g></g><g class="node" id="N03" transform="translate(185.70000076293945,308)" style="opacity: 1;"><rect rx="0" ry="0" x="-60" y="-33" width="120" height="66"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-50,-23)"><foreignObject width="100" height="46"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml">[N03]<br>二三级预算导入</div></foreignObject></g></g></g><g class="node" id="N04" transform="translate(141.70000076293945,447)" style="opacity: 1;"><rect rx="0" ry="0" x="-39" y="-33" width="78" height="66"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-29,-23)"><foreignObject width="58" height="46"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml">[N04]<br>预算审核</div></foreignObject></g></g></g><g class="node" id="N05" transform="translate(110.5,586)" style="opacity: 1;"><rect rx="0" ry="0" x="-39" y="-33" width="78" height="66"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-29,-23)"><foreignObject width="58" height="46"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml">[N05]<br>院长启动</div></foreignObject></g></g></g><g class="node" id="A06" transform="translate(110.5,766.4000015258789)" style="opacity: 1;"><polygon points="74.4,0 148.8,-74.4 74.4,-148.8 0,-74.4" rx="5" ry="5" transform="translate(-74.4,74.4)"></polygon><g class="label" transform="translate(0,0)"><g transform="translate(-50,-23)"><foreignObject width="100" height="46"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml">[A06]<br>是否需要承诺书</div></foreignObject></g></g></g><g class="node" id="N07" transform="translate(80,946.8000030517578)" style="opacity: 1;"><rect rx="0" ry="0" x="-60" y="-33" width="120" height="66"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-50,-23)"><foreignObject width="100" height="46"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml">[N07]<br>院办下发承诺书</div></foreignObject></g></g></g><g class="node" id="N08" transform="translate(80,1085.8000030517578)" style="opacity: 1;"><rect rx="0" ry="0" x="-46" y="-33" width="92" height="66"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-36,-23)"><foreignObject width="72" height="46"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml">[N08]<br>负责人确认</div></foreignObject></g></g></g><g class="node" id="N09" transform="translate(110.5,1224.8000030517578)" style="opacity: 1;"><rect rx="0" ry="0" x="-60" y="-33" width="120" height="66"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-50,-23)"><foreignObject width="100" height="46"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml">[N09]<br>分配二级执行人</div></foreignObject></g></g></g><g class="node" id="S10" transform="translate(287.9000015258789,766.4000015258789)" style="opacity: 1;"><circle x="-53" y="-44.5" r="53"></circle><g class="label" transform="translate(0,0)"><g transform="translate(-43,-34.5)"><foreignObject width="86" height="69"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml">流程失败<br>原始数据屏蔽<br>通知发起人</div></foreignObject></g></g></g><g class="node" id="S11" transform="translate(110.5,1367.8000030517578)" style="opacity: 1;"><circle x="-60" y="-33" r="60"></circle><g class="label" transform="translate(0,0)"><g transform="translate(-50,-23)"><foreignObject width="100" height="46"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml">流程结束<br>资金卡建立完成</div></foreignObject></g></g></g><g class="node" id="X01" transform="translate(287.9000015258789,586)" style="opacity: 1;"><rect rx="5" ry="5" x="-87" y="-33" width="174" height="66" style="fill:#ccf;stroke:#f66;stroke-width:2px;stroke-dasharray: 5; 5;"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-77,-23)"><foreignObject width="154" height="46"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml">[X01]<br>流程[N04]前可主动放弃</div></foreignObject></g></g></g></g></g></g></svg></div><p></p><h3><a name='header-c163' class='md-header-anchor '></a>工作流节点详细说明</h3><h4><a name='header-c164' class='md-header-anchor '></a>F01 资金卡线下审批流程</h4><p>​	描述： 按学院规章，完成资金卡启动的所有相关流程，并准备好资金卡的基本信息与二三级预算目录。<code>发起人</code>在资料准备完全后，将所有建卡信息邮件给<em>财务处</em> 的建卡人员邮箱。</p><h4><a name='header-c167' class='md-header-anchor '></a>N02 财务建卡</h4><p>​	描述：有权限的<code>用户</code>在线上生成<strong>资金卡</strong>。此节点操作完成时，<strong>资金卡</strong>开始处于&#39;建立中&#39;的状态。</p><ul><li><p>操作权限： <em>财务处</em> 有 <strong>建立资金卡</strong>权限的<code>用户</code>。</p></li><li><p>执行内容：</p><ul><li><p>进入节点时：<code>用户</code>检查所有建卡资料是否齐备，如果缺少则放弃操作进入流程X01。</p></li><li><p>节点数据提交时： 在<code>资金卡系统</code> 上建立一本<mark>待完善</mark> 的<strong>资金卡</strong>。需要<code>用户</code>填写<strong>资金卡</strong>的基本数据，包括：<em>资金卡名称</em>、<em>资金卡编号</em>、<em>资金卡分管院领导</em>、<em>资金卡负责人</em>、<em>是否需要院长签字</em>、<em>是否需要院办下发承诺书</em>、<em>预计结束日期</em>  等。</p><blockquote><p>设计规范：</p><p>​	&#39;是否需要院长签字&#39;与&#39;是否需要院办下发承诺书&#39;（日常）两项应在<code>资金卡系统</code>的后台有可设置的默认值选项，初始界面应该按对应的默认值初始化这些选项。</p></blockquote></li><li><p>离开接节点时：</p><ul><li>完成资金卡的基本信息填写后，<code>用户</code>需要向<code>资金卡系统</code>提交该资金卡，系统检查数据完整性无误后，正式建立一本‘待完善、尚未启动’的<strong>资金卡</strong>。</li><li><strong>资金卡</strong>正式建立后，流程自动切换到下一个节点。</li><li>如果<code>用户</code>认为资金卡的资料有缺失，可拒绝建立资金卡，并将该决定通知给<code>发起人</code>，流程转入X01。</li></ul></li></ul></li></ul><h4><a name='header-c202' class='md-header-anchor '></a>N03 二三级预算导入</h4><p>​	描述：有权限的<code>用户</code>在线上将二三级预算导入<strong>资金卡</strong>。此节点操作完成时，<strong>资金卡</strong>将处于&#39;待财务审核&#39;的状态。</p><ul><li><p>操作权限： <em>财务处</em> 有 <strong>导入资金卡预算</strong>权限的<code>用户</code>。</p></li><li><p>执行内容：</p><ul><li><p>进入节点时：<code>用户</code>检查所有预算资料是否齐备，如果缺少则放弃操作进入流程X01。</p></li><li><p>节点数据提交时： 在<code>资金卡系统</code> 上按 <code>批量数据导入</code> 的操作模式把<code>发起人</code>提供的二三级预算资料导入<strong>资金卡</strong>  。</p></li><li><p>离开接节点时：</p><ul><li>完成资金卡的二三级预算导入后，<code>用户</code>需要向<code>资金卡系统</code>提交该资金卡，系统检查数据完整性无误后，将<strong>三级预算</strong>与<strong>资金卡</strong>绑定，并汇总出二级预算目录。</li><li>预算导入成功后，流程自动切换到下一个节点。</li><li>如果<code>用户</code>认为预算资料有缺失，可拒绝预算导入操作，并将该决定通知给<code>发起人</code>，流程转入X01。</li></ul></li></ul></li></ul><h4><a name='header-c232' class='md-header-anchor '></a>N04 预算审核</h4><p>​	描述：有权限的<code>用户</code>在线上审核已导入<strong>资金卡</strong>的数据。此节点操作完成时，<strong>资金卡</strong>将处于&#39;待院长启动&#39;的状态。</p><ul><li><p>操作权限： <em>财务处</em> 有 <strong>审核资金卡建立</strong> 权限的<code>用户</code>。</p></li><li><p>执行内容：</p><ul><li><p>进入节点时：<code>用户</code>检查所有<code>发起人</code>的资料与<code>资金卡系统</code>上<strong>资金卡</strong>数据是否一致，如果数据不符则将需要输入理由并退回到流程N03。</p></li><li><p>节点数据提交时： 在<code>资金卡系统</code> 上按 <code>线上签名组件</code> 的操作模式完成<strong>资金卡</strong>建立流程中的财务审核工作，并推送<strong>资金卡</strong>至<em>院长</em> 处审批  。</p></li><li><p>离开接节点时：</p><ul><li>如果<code>用户</code>认为预算资料有轻量缺失，可退回审批至上一个步骤，流程转入N03。</li><li>如果<code>用户</code>认为预算资料有严重缺失，可拒绝审批操作，并将该决定通知给<code>发起人</code>，流程转入X01。</li><li>如果审核通过，则<code>用户</code>按 <code>线上签名组件</code> 的操作模式完成<strong>资金卡</strong>建立流程中的财务审核工作，流程转下一步。</li></ul></li></ul></li></ul><h4><a name='header-c262' class='md-header-anchor '></a>N05 院长启动</h4><p>​	描述： <em>院长</em> 收到需要启动<strong>资金卡</strong>的通知后，登录<code>资金卡系统</code>，查阅待启动的<strong>资金卡</strong>详细信息并启动该<strong>资金卡</strong>。该项操作的通过表明<em>院长</em>  <mark>已知晓该项<strong>资金卡</strong>的启动情况</mark>。此节点操作完成时，如果该<strong>资金卡</strong>不需要下发承诺书则可以被标记为&#39;已启用&#39;的状态；如果需要下发承诺书则应被标记为&#39;待承诺&#39;状态。</p><ul><li><p>操作权限：   <em>院长</em> 。</p></li><li><p>执行内容：</p><ul><li><p>进入节点时：审核操作人权限、在线上系统内点开待启动的<strong>资金卡</strong>，查单相关信息。</p></li><li><p>节点数据提交时： 审核操作人权限。</p></li><li><p>离开接节点时：</p><ul><li>院长如果认可该<strong>资金卡</strong>可以启用，则通过 <code>线上签名组件</code>完成电子签字并启动资金卡，流程自动流转到下一步。</li><li>当<strong>资金卡</strong>被证实启动后，系统应通知<code>发起人</code>。</li><li>院长如果认为存在疑问，可附带修改意见的否决该操作，流程退回N04。</li></ul></li></ul></li></ul><h4><a name='header-c292' class='md-header-anchor '></a>A06 是否需要承诺书</h4><p>​	描述：<code>资金卡系统</code> 应根据资金卡在N02操作时设置的&#39;是否需要院办下发承诺书&#39;选项决定后续流程走向。</p><h4><a name='header-c295' class='md-header-anchor '></a>N07 院办下发承诺书</h4><p>​	描述：有权限的<code>用户</code>上传《项目承诺书》给<code>资金卡系统</code>。此节点操作完成时，<code>资金卡系统</code>应向<strong>资金卡</strong>的负责人推送需要确认承诺书的消息。</p><ul><li><p>操作权限：院办有<strong>下发承诺书</strong>权限的<code>用户</code>。</p></li><li><p>执行内容：</p><ul><li><p>进入节点时：审核操作人权限、在线上系统内点开待启动的<strong>资金卡</strong>，查单相关信息。</p></li><li><p>节点数据提交时： 审核操作人权限，确认存在上传的承诺书附件。</p></li><li><p>离开接节点时：</p><ul><li><code>资金卡系统</code> 应向<strong>资金卡</strong>的负责人推送需要确认承诺书的消息。</li></ul></li></ul></li></ul><h4><a name='header-c319' class='md-header-anchor '></a>N08 负责人确认</h4><p>​	描述：有权限的<code>用户</code>在线上查看《项目承诺书》并点击确定按钮以表示已同意承诺书的内容。此节点操作完成时，<strong>资金卡</strong>应被标记为&#39;已启用&#39;的状态。</p><ul><li><p>操作权限：<strong>资金卡</strong>的负责人。</p></li><li><p>执行内容：</p><ul><li><p>进入节点时：审核操作人权限、在线上系统内点开待启动的<strong>资金卡</strong>，查单相关信息与《项目承诺书》。</p></li><li><p>节点数据提交时： 审核操作人权限，确认已点击&quot;承诺书已阅，同意按此执行&quot;的按钮。</p></li><li><p>离开接节点时：</p><ul><li>流程自动切换到下一个节点。</li></ul></li></ul></li></ul><h4><a name='header-c343' class='md-header-anchor '></a>N09分配二级执行人</h4><p>​	描述：有权限的<code>用户</code>在线上查看<strong>资金卡</strong>的二三级预算，并给每个二级预算分配一名<code>用户</code>作为该二级预算的执行人。</p><ul><li><p>操作权限：<strong>资金卡</strong>的负责人。</p></li><li><p>执行内容：</p><ul><li><p>进入节点时：<code>用户</code>收到<strong>资金卡</strong>已启用的通知，登录<code>资金卡系统</code>查看预算信息与<strong>资金卡</strong>基本信息。</p></li><li><p>节点数据提交时： <code>用户</code>需要为<strong>资金卡</strong>里的每个二级预算分配一名<code>用户</code>，作为该二级预算的执行人。系统同时自动将该二级预算下所有三级预算的负责人复制为该二级预算负责人。如果存在独立的三级预算执行人，也可单独指定。</p></li><li><p>离开接节点时：</p><ul><li>所有二级负责人都分配到位后，该<strong>资金卡</strong>正式启动。</li></ul></li></ul></li></ul><h4><a name='header-c367' class='md-header-anchor '></a>X01 流程[N04]前可主动放弃</h4><p>​	描述：<strong>资金卡</strong>建立在财务处预算审核通过(N04)前，都可主动放弃当前的整个建卡流程。在主动放弃后整个流程失败，未完成<strong>资金卡</strong>的数据被隐藏并屏蔽，同时系统需要通知<code>发起人</code>。</p></div>
+</body>
+</html>
