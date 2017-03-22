@@ -11,7 +11,7 @@
 ## 标准操作类
 
 + [STIEI-IDS-A001[标准操作规范-批量数据导入] ](./pages/STIEI-IDS-A001.html)
-+ [STIEI-IDS-A002[标准操作规范-线上电子签名] ](./pages/STIEI-IDS-A002,html)
++ [STIEI-IDS-A002[标准操作规范-线上电子签名] ](./pages/STIEI-IDS-A002.html)
 
 ## API规范
 
