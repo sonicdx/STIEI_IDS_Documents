@@ -3,6 +3,8 @@
 ===================================
 [TOC]
 
+[主站点 https://sonicdx.github.io/STIEI_IDS_Documents/](https://sonicdx.github.io/STIEI_IDS_Documents/)
+
 ## 库说明
 
 ​	本文档库用以对外公开上海电子信息职业技术学院与电子工业学校在信息化建设中的一些公开文档。
