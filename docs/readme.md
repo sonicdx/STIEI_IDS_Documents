@@ -32,10 +32,10 @@
 
 ## 规范演示项目
 
-+ [上海电子信息职业技术学院 消息总线原型演示](https://github.com/sonicdx/RabbitMQ_STIEI_PrototypeDemo)
++ [上海电子信息职业技术学院 消息总线原型演示](https://sonicdx.github.io/RabbitMQ_STIEI_PrototypeDemo/)
 
   说明：符合 **STIEI-IDS-A003[学院消息总线编码规范]** 的演示程序，该项目可用来指导应用开发如何接入信息学院的消息总线。
 
-+ [上海电子信息职业技术学院 SHSP（服务健康状态API规范）原型演示](https://github.com/sonicdx/SHSP_STIEI_PrototypeDemo)
++ [上海电子信息职业技术学院 SHSP（服务健康状态API规范）原型演示](https://sonicdx.github.io/SHSP_STIEI_PrototypeDemo/)
 
   说明：符合 **STIEI-IDS-REF001[服务健康状态API规范]** 的演示程序，该项目可用来演示如何设计与验证符合该规范的服务。
