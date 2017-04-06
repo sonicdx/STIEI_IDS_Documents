@@ -39,3 +39,7 @@
 + [上海电子信息职业技术学院 SHSP（服务健康状态API规范）原型演示](https://sonicdx.github.io/SHSP_STIEI_PrototypeDemo/)
 
   说明：符合 **STIEI-IDS-REF001[服务健康状态API规范]** 的演示程序，该项目可用来演示如何设计与验证符合该规范的服务。
+
++ [在线签名演示原型](http://www.xydemo.com/SignatureDemo/)
+
+  说明：参考 **STIEI-IDS-A002[标准操作规范-线上电子签名** 的演示程序，该项目可用来演示如何实现电子签名。*目前尚未完全实现，第一稿完成后将开放源代码*
