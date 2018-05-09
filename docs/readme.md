@@ -14,6 +14,8 @@
 + [STIEI-IDS-A001[标准操作规范-批量数据导入] ](./pages/STIEI-IDS-A001.html)
 + [STIEI-IDS-A002[标准操作规范-线上电子签名] ](./pages/STIEI-IDS-A002.html)
 + [STIEI-IDS-A003[学院消息总线编码规范]](./pages/STIEI-IDS-A003.html)
++ [STIEI-IDS-A004[学院微信应用部署方案]](./pages/STIEI-IDS-A004.html)
++ [STIEI-IDS-A005[学院Web服务API文档参考格式]](./pages/STIEI-IDS-A005.html)
 
 ## API规范
 
